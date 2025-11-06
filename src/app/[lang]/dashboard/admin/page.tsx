@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -16,7 +17,6 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, Download, FileText } from "lucide-react";
-import type { Icon } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,23 +26,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { adminStats, candidates } from "@/lib/data";
+import { StatCard } from "@/components/shared/stat-card";
 
-const StatCard = ({ title, value, icon: Icon }: { title: string, value: string, icon: Icon }) => (
-    <Card>
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{title}</CardTitle>
-            <Icon className="h-4 w-4 text-muted-foreground" />
-        </CardHeader>
-        <CardContent>
-            <div className="text-2xl font-bold">{value}</div>
-        </CardContent>
-    </Card>
-)
 
 export default function AdminPage() {
   return (
-    <div className="container mx-auto py-8">
-        <div className="flex items-center justify-between mb-8">
+    <div className="flex flex-col gap-8">
+        <div className="flex items-center justify-between">
             <h1 className="font-headline text-3xl font-bold">
                 Back-Office Administrateur
             </h1>
@@ -68,7 +58,7 @@ export default function AdminPage() {
             </div>
         </div>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-8">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {adminStats.map(stat => <StatCard key={stat.title} {...stat} />)}
       </div>
 
@@ -100,7 +90,7 @@ export default function AdminPage() {
                   <TableCell>
                     <Badge variant="secondary">En attente d'examen</Badge>
                   </TableCell>
-                  <TableCell>{new Date().toLocaleDateString()}</TableCell>
+                  <TableCell>{new Date().toLocaleDateString('fr-FR')}</TableCell>
                   <TableCell>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
