@@ -14,7 +14,7 @@ const Partners = () => {
     <div className="py-16 bg-card">
       <div className="container mx-auto">
         <h3 className="text-center font-headline text-2xl font-semibold text-muted-foreground mb-8">
-          In partnership with Africa's leading brands
+          En partenariat avec les plus grandes marques d'Afrique
         </h3>
         <div className="relative w-full overflow-hidden">
           <div className="flex animate-marquee motion-reduce:animate-none">

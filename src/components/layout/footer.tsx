@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <Logo />
           <p className="text-sm text-muted-foreground">
-            The Oscar of African franchise and associated trade.
+            L'Oscar de la franchise africaine et du commerce associé.
           </p>
           <div className="flex items-center gap-3">
             <Link href="#" aria-label="Twitter">
@@ -27,38 +27,38 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-semibold">Quick Links</h4>
+          <h4 className="font-headline text-lg font-semibold">Liens rapides</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
-            <li><Link href="/categories" className="text-muted-foreground hover:text-primary">Categories</Link></li>
-            <li><Link href="/jury" className="text-muted-foreground hover:text-primary">The Jury</Link></li>
+            <li><Link href="/about" className="text-muted-foreground hover:text-primary">À propos de nous</Link></li>
+            <li><Link href="/categories" className="text-muted-foreground hover:text-primary">Catégories</Link></li>
+            <li><Link href="/jury" className="text-muted-foreground hover:text-primary">Le Jury</Link></li>
             <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-semibold">Legal</h4>
+          <h4 className="font-headline text-lg font-semibold">Légal</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link href="/privacy" className="text-muted-foreground hover:text-primary">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="text-muted-foreground hover:text-primary">Terms of Service</Link></li>
-            <li><Link href="/cookies" className="text-muted-foreground hover:text-primary">Cookie Policy</Link></li>
+            <li><Link href="/privacy" className="text-muted-foreground hover:text-primary">Politique de confidentialité</Link></li>
+            <li><Link href="/terms" className="text-muted-foreground hover:text-primary">Conditions d'utilisation</Link></li>
+            <li><Link href="/cookies" className="text-muted-foreground hover:text-primary">Politique sur les cookies</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-semibold">Stay Updated</h4>
+          <h4 className="font-headline text-lg font-semibold">Restez informé</h4>
           <p className="mt-4 text-sm text-muted-foreground">
-            Subscribe to our newsletter for the latest updates.
+            Abonnez-vous à notre newsletter pour les dernières mises à jour.
           </p>
           <form className="mt-4 flex gap-2">
-            <Input type="email" placeholder="Enter your email" className="flex-1" />
-            <Button type="submit" variant="default">Subscribe</Button>
+            <Input type="email" placeholder="Entrez votre email" className="flex-1" />
+            <Button type="submit" variant="default">S'abonner</Button>
           </form>
         </div>
       </div>
       <div className="border-t">
         <div className="container py-4 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} AFCAA. All Rights Reserved.
+          © {new Date().getFullYear()} AFCAA. Tous droits réservés.
         </div>
       </div>
     </footer>

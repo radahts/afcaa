@@ -48,8 +48,8 @@ const ApplicationProgress = () => {
     return (
         <Card>
             <CardHeader>
-                <CardTitle className="font-headline">Application Progress</CardTitle>
-                <CardDescription>Complete all steps to submit your application.</CardDescription>
+                <CardTitle className="font-headline">Progression de la candidature</CardTitle>
+                <CardDescription>Complétez toutes les étapes pour soumettre votre candidature.</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="flex items-center gap-4 mb-4">
@@ -87,7 +87,7 @@ const ApplicationProgress = () => {
                  </ol>
             </CardContent>
              <CardFooter>
-                <Button variant="outline" className="w-full">Save Draft</Button>
+                <Button variant="outline" className="w-full">Sauvegarder le brouillon</Button>
             </CardFooter>
         </Card>
     )
@@ -99,12 +99,12 @@ const FileUpload = () => {
             <div className="border-2 border-dashed border-border rounded-lg p-12 text-center bg-card hover:border-primary transition-colors">
                 <Upload className="mx-auto h-12 w-12 text-muted-foreground" />
                 <p className="mt-4 text-sm text-muted-foreground">
-                    <span className="font-semibold text-primary">Click to upload</span> or drag and drop
+                    <span className="font-semibold text-primary">Cliquez pour télécharger</span> ou glissez-déposez
                 </p>
-                <p className="text-xs text-muted-foreground">Up to 5GB per file. PDF, JPG, PNG, MP4 supported.</p>
+                <p className="text-xs text-muted-foreground">Jusqu'à 5 Go par fichier. PDF, JPG, PNG, MP4 pris en charge.</p>
             </div>
             <div className="space-y-2">
-                <p className="font-medium text-sm">Uploaded files:</p>
+                <p className="font-medium text-sm">Fichiers téléchargés:</p>
                 <div className="flex items-center justify-between p-2 rounded-md bg-accent/10 border border-accent/20">
                     <div className="flex items-center gap-2">
                         <File className="h-5 w-5 text-accent"/>
@@ -123,13 +123,13 @@ const BarterCode = () => {
     return (
         <Card className="bg-primary/5 border-primary/20">
             <CardHeader>
-                <CardTitle className="font-headline text-xl">Partner Barter Code</CardTitle>
-                <CardDescription>If you have a barter code from one of our partners, enter it here to waive the application fee.</CardDescription>
+                <CardTitle className="font-headline text-xl">Code de troc partenaire</CardTitle>
+                <CardDescription>Si vous avez un code de troc de l'un de nos partenaires, entrez-le ici pour ne pas payer les frais de candidature.</CardDescription>
             </CardHeader>
             <CardContent>
                  <div className="flex gap-2">
-                    <Input placeholder="Enter your barter code"/>
-                    <Button variant="secondary">Apply Code</Button>
+                    <Input placeholder="Entrez votre code de troc"/>
+                    <Button variant="secondary">Appliquer le code</Button>
                 </div>
             </CardContent>
         </Card>
@@ -139,27 +139,27 @@ const BarterCode = () => {
 export default function ApplicationPage() {
   return (
     <div className="container mx-auto py-8">
-        <h1 className="font-headline text-3xl font-bold mb-2">My Application</h1>
-        <p className="text-muted-foreground mb-8">Submit your application for the AFCAA 2026 awards.</p>
+        <h1 className="font-headline text-3xl font-bold mb-2">Ma Candidature</h1>
+        <p className="text-muted-foreground mb-8">Soumettez votre candidature pour les prix AFCAA 2026.</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-2 space-y-8">
                 <Card>
                     <CardHeader>
-                        <CardTitle className="font-headline text-2xl">Step 3: The 5 Pillars of Excellence</CardTitle>
-                        <CardDescription>Provide evidence and detailed descriptions for each of the five pillars. Upload supporting documents below.</CardDescription>
+                        <CardTitle className="font-headline text-2xl">Étape 3 : Les 5 Piliers d'Excellence</CardTitle>
+                        <CardDescription>Fournissez des preuves et des descriptions détaillées pour chacun des cinq piliers. Téléchargez les documents justificatifs ci-dessous.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-6">
                          <div className="space-y-2">
-                            <Label htmlFor="pillar1">Pillar 1: Vision & Strategy</Label>
-                            <Textarea id="pillar1" placeholder="Describe your company's vision and long-term strategy..." rows={4}/>
+                            <Label htmlFor="pillar1">Pilier 1 : Vision & Stratégie</Label>
+                            <Textarea id="pillar1" placeholder="Décrivez la vision et la stratégie à long terme de votre entreprise..." rows={4}/>
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="pillar2">Pillar 2: Financial Performance</Label>
-                            <Textarea id="pillar2" placeholder="Detail your financial growth, profitability, and stability..." rows={4}/>
+                            <Label htmlFor="pillar2">Pilier 2 : Performance Financière</Label>
+                            <Textarea id="pillar2" placeholder="Détaillez votre croissance financière, votre rentabilité et votre stabilité..." rows={4}/>
                         </div>
                          <div className="space-y-2">
-                            <Label>Supporting Documents</Label>
+                            <Label>Documents justificatifs</Label>
                             <FileUpload />
                         </div>
                     </CardContent>
@@ -168,8 +168,8 @@ export default function ApplicationPage() {
                 <BarterCode />
 
                 <div className="flex justify-between">
-                    <Button variant="outline"><ArrowLeft className="mr-2 h-4 w-4"/> Previous Step</Button>
-                    <Button><ArrowRight className="mr-2 h-4 w-4"/> Next Step</Button>
+                    <Button variant="outline"><ArrowLeft className="mr-2 h-4 w-4"/> Étape précédente</Button>
+                    <Button><ArrowRight className="mr-2 h-4 w-4"/> Étape suivante</Button>
                 </div>
 
             </div>

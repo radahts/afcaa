@@ -31,19 +31,19 @@ import { partnerStats } from "@/lib/data";
 
 const chartData = [
   { name: "Jan", leads: 400, impressions: 240000 },
-  { name: "Feb", leads: 300, impressions: 139800 },
+  { name: "Fév", leads: 300, impressions: 139800 },
   { name: "Mar", leads: 500, impressions: 980000 },
-  { name: "Apr", leads: 478, impressions: 390800 },
-  { name: "May", leads: 689, impressions: 480000 },
-  { name: "Jun", leads: 580, impressions: 380000 },
-  { name: "Jul", leads: 790, impressions: 430000 },
+  { name: "Avr", leads: 478, impressions: 390800 },
+  { name: "Mai", leads: 689, impressions: 480000 },
+  { name: "Juin", leads: 580, impressions: 380000 },
+  { name: "Juil", leads: 790, impressions: 430000 },
 ];
 
 const roiData = [
-    { activity: 'Logo on Homepage', impressions: '550k', leads: 1200, signed: 12, status: 'Live' },
-    { activity: 'Category Sponsorship', impressions: '210k', leads: 850, signed: 8, status: 'Live' },
-    { activity: 'Newsletter Mention', impressions: '80k', leads: 450, signed: 5, status: 'Completed' },
-    { activity: 'Gala Event Branding', impressions: 'N/A', leads: 25, signed: 2, status: 'Upcoming' },
+    { activity: 'Logo sur la page d\'accueil', impressions: '550k', leads: 1200, signed: 12, status: 'En direct' },
+    { activity: 'Sponsor de catégorie', impressions: '210k', leads: 850, signed: 8, status: 'En direct' },
+    { activity: 'Mention dans la newsletter', impressions: '80k', leads: 450, signed: 5, status: 'Terminé' },
+    { activity: 'Branding de l\'événement de gala', impressions: 'N/A', leads: 25, signed: 2, status: 'À venir' },
 ]
 
 const StatCard = ({ title, value, change, icon: Icon }: { title: string, value: string, change: string, icon: Icon }) => (
@@ -54,7 +54,7 @@ const StatCard = ({ title, value, change, icon: Icon }: { title: string, value: 
         </CardHeader>
         <CardContent>
             <div className="text-2xl font-bold">{value}</div>
-            <p className="text-xs text-muted-foreground">{change} vs last period</p>
+            <p className="text-xs text-muted-foreground">{change} vs période précédente</p>
         </CardContent>
     </Card>
 )
@@ -63,7 +63,7 @@ export default function PartnerPage() {
   return (
     <div className="container mx-auto py-8">
       <h1 className="font-headline text-3xl font-bold mb-8">
-        Partner Analytics Dashboard
+        Tableau de Bord Analytique Partenaire
       </h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-8">
         {partnerStats.map(stat => <StatCard key={stat.title} {...stat} />)}
@@ -72,8 +72,8 @@ export default function PartnerPage() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <Card className="lg:col-span-3">
             <CardHeader>
-                <CardTitle className="font-headline">Performance Overview</CardTitle>
-                <CardDescription>Leads and impressions generated over time.</CardDescription>
+                <CardTitle className="font-headline">Aperçu des performances</CardTitle>
+                <CardDescription>Pistes et impressions générées au fil du temps.</CardDescription>
             </CardHeader>
             <CardContent>
                 <ResponsiveContainer width="100%" height={350}>
@@ -91,7 +91,7 @@ export default function PartnerPage() {
                         />
                         <Legend />
                         <Line yAxisId="left" type="monotone" dataKey="impressions" name="Impressions" stroke="#f39c12" strokeWidth={2} />
-                        <Line yAxisId="right" type="monotone" dataKey="leads" name="Leads" stroke="#00a859" strokeWidth={2} />
+                        <Line yAxisId="right" type="monotone" dataKey="leads" name="Pistes" stroke="#00a859" strokeWidth={2} />
                     </LineChart>
                 </ResponsiveContainer>
             </CardContent>
@@ -99,16 +99,16 @@ export default function PartnerPage() {
 
         <Card className="lg:col-span-2">
             <CardHeader>
-                <CardTitle className="font-headline">ROI Breakdown</CardTitle>
-                <CardDescription>Performance of your partnership activities.</CardDescription>
+                <CardTitle className="font-headline">Répartition du ROI</CardTitle>
+                <CardDescription>Performance de vos activités de partenariat.</CardDescription>
             </CardHeader>
             <CardContent>
                  <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Activity</TableHead>
-                            <TableHead>Leads</TableHead>
-                            <TableHead>Status</TableHead>
+                            <TableHead>Activité</TableHead>
+                            <TableHead>Pistes</TableHead>
+                            <TableHead>Statut</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -117,7 +117,7 @@ export default function PartnerPage() {
                                 <TableCell className="font-medium">{item.activity}</TableCell>
                                 <TableCell>{item.leads}</TableCell>
                                 <TableCell>
-                                    <Badge variant={item.status === 'Live' ? 'default' : item.status === 'Completed' ? 'secondary' : 'outline'} className={item.status === 'Live' ? 'bg-green-500 text-white' : ''}>{item.status}</Badge>
+                                    <Badge variant={item.status === 'En direct' ? 'default' : item.status === 'Terminé' ? 'secondary' : 'outline'} className={item.status === 'En direct' ? 'bg-green-500 text-white' : ''}>{item.status}</Badge>
                                 </TableCell>
                             </TableRow>
                         ))}

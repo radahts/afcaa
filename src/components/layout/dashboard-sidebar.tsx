@@ -27,25 +27,25 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const sidebarNav = [
   {
-    title: "Candidate Space",
+    title: "Espace Candidat",
     href: "/dashboard/apply",
     icon: Award,
     role: "candidate",
   },
   {
-    title: "Jury Dashboard",
+    title: "Tableau de Bord Jury",
     href: "/dashboard/jury",
     icon: Users,
     role: "jury",
   },
   {
-    title: "Partner Analytics",
+    title: "Analytiques Partenaire",
     href: "/dashboard/partner",
     icon: BarChart2,
     role: "partner",
   },
   {
-    title: "Admin Panel",
+    title: "Panneau Admin",
     href: "/dashboard/admin",
     icon: Shield,
     role: "admin",
@@ -73,7 +73,7 @@ export default function DashboardSidebar() {
               return (
               <AccordionItem value={role} key={role} className="border-b-0">
                 <AccordionTrigger className="py-2 text-sm text-muted-foreground hover:no-underline capitalize">
-                  {role} Space
+                  Espace {role}
                 </AccordionTrigger>
                 <AccordionContent className="pb-2">
                   <div className="flex flex-col space-y-1">
@@ -109,7 +109,7 @@ export default function DashboardSidebar() {
                     <AvatarFallback>U</AvatarFallback>
                 </Avatar>
                 <div>
-                    <p className="text-sm font-medium">Demo User</p>
+                    <p className="text-sm font-medium">Utilisateur Démo</p>
                     <p className="text-xs text-muted-foreground">user@afcaa.com</p>
                 </div>
               </div>

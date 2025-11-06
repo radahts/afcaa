@@ -15,11 +15,11 @@ import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/vote', label: 'Vote' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/dashboard', label: 'Dashboard' },
+  { href: '/', label: 'Accueil' },
+  { href: '/about', label: 'À Propos' },
+  { href: '/vote', label: 'Voter' },
+  { href: '/resources', label: 'Ressources' },
+  { href: '/dashboard', label: 'Tableau de bord' },
 ];
 
 const Header = () => {
@@ -47,11 +47,11 @@ const Header = () => {
             <Button variant="ghost" asChild className="hidden sm:flex">
                  <Link href="/dashboard/apply">
                     <Award className="mr-2 h-4 w-4" />
-                    Apply Now
+                    Postuler
                 </Link>
             </Button>
             <Button asChild>
-                <Link href="/dashboard">Login</Link>
+                <Link href="/dashboard">Connexion</Link>
             </Button>
 
           <Sheet>

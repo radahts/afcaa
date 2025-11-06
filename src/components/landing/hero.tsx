@@ -32,15 +32,15 @@ const Hero = () => {
       
       <div className="relative z-10 container text-center px-4">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-          The <span className="text-primary">Oscar</span> of African Franchising
+          L' <span className="text-primary">Oscar</span> de la Franchise Africaine
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-200 md:text-xl">
-          Celebrating visionary entrepreneurs and world-class brands shaping the future of commerce on the continent.
+          Célébrer les entrepreneurs visionnaires et les marques de classe mondiale qui façonnent l'avenir du commerce sur le continent.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ShineButton href="/dashboard/apply">Apply for an Award</ShineButton>
+            <ShineButton href="/dashboard/apply">Postuler pour un Prix</ShineButton>
             <Button asChild size="lg" variant="outline">
-                <Link href="/vote">Cast Your Vote</Link>
+                <Link href="/vote">Votez</Link>
             </Button>
         </div>
       </div>
@@ -50,18 +50,18 @@ const Hero = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center text-white">
                 <div className="flex flex-col items-center">
                     <Medal className="w-8 h-8 text-primary mb-2" />
-                    <span className="text-2xl font-bold font-headline">25+ Categories</span>
-                    <span className="text-sm text-gray-300">Across all industries</span>
+                    <span className="text-2xl font-bold font-headline">+25 Catégories</span>
+                    <span className="text-sm text-gray-300">Toutes industries confondues</span>
                 </div>
                  <div className="flex flex-col items-center">
                     <Users className="w-8 h-8 text-primary mb-2" />
-                    <span className="text-2xl font-bold font-headline">1,000+ Applicants</span>
-                    <span className="text-sm text-gray-300">From 54 countries</span>
+                    <span className="text-2xl font-bold font-headline">+1000 Candidats</span>
+                    <span className="text-sm text-gray-300">De 54 pays</span>
                 </div>
                  <div className="flex flex-col items-center">
                     <Vote className="w-8 h-8 text-primary mb-2" />
-                    <span className="text-2xl font-bold font-headline">50,000+ Votes</span>
-                    <span className="text-sm text-gray-300">For the People's Choice</span>
+                    <span className="text-2xl font-bold font-headline">+50 000 Votes</span>
+                    <span className="text-sm text-gray-300">Pour le Prix du Public</span>
                 </div>
             </div>
         </div>

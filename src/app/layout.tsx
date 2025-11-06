@@ -19,8 +19,8 @@ const fontNotoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'AFCAA 2026 - The African Franchise Awards',
-  description: 'Celebrating excellence in African franchising and associated trade.',
+  title: 'AFCAA 2026 - L\'Oscar Africain de la Franchise',
+  description: 'Célébrer l\'excellence dans la franchise africaine et le commerce associé.',
   icons: {
     icon: '/favicon.ico',
   },
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

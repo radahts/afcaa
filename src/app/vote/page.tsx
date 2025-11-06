@@ -59,7 +59,7 @@ const CandidateCard = ({ candidate }: { candidate: typeof candidates[0] }) => {
       <CardFooter className="p-4 pt-0">
         <Button className="w-full" variant="default">
             <VoteIcon className="mr-2 h-4 w-4"/>
-            Vote for {candidate.name.split(' ')[0]}
+            Voter pour {candidate.name.split(' ')[0]}
         </Button>
       </CardFooter>
     </Card>
@@ -75,18 +75,18 @@ const Leaderboard = () => {
             <CardHeader>
                 <CardTitle className="flex items-center gap-2 font-headline">
                     <Trophy className="text-primary"/>
-                    Live Leaderboard
+                    Classement en direct
                 </CardTitle>
-                <CardDescription>Votes are updated in real-time. One vote per person, per day.</CardDescription>
+                <CardDescription>Les votes sont mis à jour en temps réel. Un vote par personne, par jour.</CardDescription>
             </CardHeader>
             <CardContent>
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead className="w-12">Rank</TableHead>
-                            <TableHead>Candidate</TableHead>
+                            <TableHead className="w-12">Rang</TableHead>
+                            <TableHead>Candidat</TableHead>
                             <TableHead className="text-right">Votes</TableHead>
-                            <TableHead className="w-1/3">Progress</TableHead>
+                            <TableHead className="w-1/3">Progression</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -112,11 +112,11 @@ const Leaderboard = () => {
 export default function VotePage() {
   return (
     <>
-      <PageHeader title="People's Choice Award" description="Your vote matters! Support your favorite franchise and help them win the coveted People's Choice Award." />
+      <PageHeader title="Prix du Public" description="Votre vote compte ! Soutenez votre franchise préférée et aidez-la à remporter le très convoité Prix du Public." />
       <div className="container py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-                <h2 className="font-headline text-2xl font-bold mb-6">Top Contenders</h2>
+                <h2 className="font-headline text-2xl font-bold mb-6">Principaux concurrents</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {candidates.map((candidate) => (
                         <CandidateCard key={candidate.id} candidate={candidate} />
@@ -124,7 +124,7 @@ export default function VotePage() {
                 </div>
             </div>
             <div>
-                <h2 className="font-headline text-2xl font-bold mb-6">Standings</h2>
+                <h2 className="font-headline text-2xl font-bold mb-6">Classement</h2>
                 <Leaderboard />
             </div>
         </div>

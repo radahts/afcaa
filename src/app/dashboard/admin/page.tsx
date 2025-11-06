@@ -44,25 +44,25 @@ export default function AdminPage() {
     <div className="container mx-auto py-8">
         <div className="flex items-center justify-between mb-8">
             <h1 className="font-headline text-3xl font-bold">
-                Admin Back-Office
+                Back-Office Administrateur
             </h1>
             <div className="flex items-center gap-2">
                 <Button variant="outline">
                     <FileText className="mr-2 h-4 w-4" />
-                    Moderate Content
+                    Modérer le contenu
                 </Button>
                  <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button>
                             <Download className="mr-2 h-4 w-4" />
-                            Export Data
+                            Exporter les données
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Export Options</DropdownMenuLabel>
-                        <DropdownMenuItem>Export Candidates (CSV)</DropdownMenuItem>
-                        <DropdownMenuItem>Export Voters (JSON)</DropdownMenuItem>
-                        <DropdownMenuItem>Export All Stats (PDF)</DropdownMenuItem>
+                        <DropdownMenuLabel>Options d'exportation</DropdownMenuLabel>
+                        <DropdownMenuItem>Exporter les candidats (CSV)</DropdownMenuItem>
+                        <DropdownMenuItem>Exporter les votants (JSON)</DropdownMenuItem>
+                        <DropdownMenuItem>Exporter toutes les statistiques (PDF)</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
@@ -74,19 +74,19 @@ export default function AdminPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="font-headline">Recent Applications</CardTitle>
+          <CardTitle className="font-headline">Candidatures Récentes</CardTitle>
           <CardDescription>
-            A list of the most recent candidate applications for review.
+            Liste des candidatures les plus récentes à examiner.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Candidate</TableHead>
-                <TableHead>Category</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Date Submitted</TableHead>
+                <TableHead>Candidat</TableHead>
+                <TableHead>Catégorie</TableHead>
+                <TableHead>Statut</TableHead>
+                <TableHead>Date de soumission</TableHead>
                 <TableHead>
                   <span className="sr-only">Actions</span>
                 </TableHead>
@@ -98,7 +98,7 @@ export default function AdminPage() {
                   <TableCell className="font-medium">{candidate.name}</TableCell>
                   <TableCell>{candidate.category}</TableCell>
                   <TableCell>
-                    <Badge variant="secondary">Pending Review</Badge>
+                    <Badge variant="secondary">En attente d'examen</Badge>
                   </TableCell>
                   <TableCell>{new Date().toLocaleDateString()}</TableCell>
                   <TableCell>
@@ -111,9 +111,9 @@ export default function AdminPage() {
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>View Application</DropdownMenuItem>
-                        <DropdownMenuItem>Approve</DropdownMenuItem>
-                         <DropdownMenuItem className="text-destructive">Reject</DropdownMenuItem>
+                        <DropdownMenuItem>Voir la candidature</DropdownMenuItem>
+                        <DropdownMenuItem>Approuver</DropdownMenuItem>
+                         <DropdownMenuItem className="text-destructive">Rejeter</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </TableCell>

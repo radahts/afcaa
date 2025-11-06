@@ -18,10 +18,10 @@ const Testimonials = () => {
       <div className="container">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            Voices of AFCAA
+            Voix d'AFCAA
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Hear from past winners, jury members, and partners about their experience.
+            Découvrez les témoignages des anciens lauréats, des membres du jury et des partenaires.
           </p>
         </div>
 

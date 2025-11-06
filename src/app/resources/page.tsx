@@ -21,9 +21,9 @@ export default function ResourcesPage() {
           />
         )}
         <div className="container relative h-full flex flex-col justify-center items-center text-center text-white">
-          <h1 className="font-headline text-4xl sm:text-5xl font-bold">Resources Hub</h1>
+          <h1 className="font-headline text-4xl sm:text-5xl font-bold">Pôle de Ressources</h1>
           <p className="mt-4 text-lg max-w-2xl text-white/80">
-            Insights and analysis from the forefront of African franchising.
+            Aperçus et analyses à la pointe de la franchise africaine.
           </p>
         </div>
       </div>
@@ -34,24 +34,24 @@ export default function ResourcesPage() {
             <div className="p-8">
               <CardHeader className="p-0">
                 <CardTitle className="font-headline text-2xl sm:text-3xl">
-                  The 2026 Africa Franchise Report
+                  Le Rapport sur la Franchise en Afrique 2026
                 </CardTitle>
                 <CardDescription className="pt-4 text-base">
-                  Our comprehensive annual report, the "Livre Blanc," offers an unparalleled look into the trends, challenges, and opportunities within the African franchise ecosystem. Download your free copy to gain a competitive edge.
+                  Notre rapport annuel complet, le "Livre Blanc," offre un regard inégalé sur les tendances, les défis et les opportunités au sein de l'écosystème de la franchise africaine. Téléchargez votre copie gratuite pour obtenir un avantage concurrentiel.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 mt-6">
                 <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside">
-                    <li>In-depth market analysis by country</li>
-                    <li>Interviews with industry leaders</li>
-                    <li>Growth forecasts and investment opportunities</li>
-                    <li>Case studies of successful franchises</li>
+                    <li>Analyse de marché approfondie par pays</li>
+                    <li>Entretiens avec des leaders de l'industrie</li>
+                    <li>Prévisions de croissance et opportunités d'investissement</li>
+                    <li>Études de cas de franchises à succès</li>
                 </ul>
                 <form className="mt-6 flex flex-col sm:flex-row gap-2">
-                    <Input type="email" placeholder="Enter your business email" required />
+                    <Input type="email" placeholder="Entrez votre email professionnel" required />
                     <Button type="submit" className="w-full sm:w-auto">
                         <Download className="mr-2 h-4 w-4" />
-                        Download Now
+                        Télécharger maintenant
                     </Button>
                 </form>
               </CardContent>

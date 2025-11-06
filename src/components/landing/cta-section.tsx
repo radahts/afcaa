@@ -18,17 +18,17 @@ const CtaSection = () => {
       )}
       <div className="container relative z-10 text-center">
         <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
-          Ready to Make Your Mark?
+          Prêt à laisser votre empreinte ?
         </h2>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-          Join the ranks of Africa's most prestigious franchises. Showcase your success, gain continental recognition, and inspire the next generation of entrepreneurs.
+          Rejoignez les rangs des franchises les plus prestigieuses d'Afrique. Mettez en valeur votre succès, obtenez une reconnaissance continentale et inspirez la prochaine génération d'entrepreneurs.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button asChild size="lg" variant="primary">
-            <Link href="/dashboard/apply">Start Your Application</Link>
+            <Link href="/dashboard/apply">Commencez votre candidature</Link>
           </Button>
           <Button asChild size="lg" variant="secondary">
-            <Link href="/contact">Become a Partner</Link>
+            <Link href="/contact">Devenez partenaire</Link>
           </Button>
         </div>
       </div>

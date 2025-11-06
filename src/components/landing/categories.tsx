@@ -7,10 +7,10 @@ const Categories = () => {
       <div className="container">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            Award Categories
+            Catégories de Prix
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            A diverse range of categories to recognize excellence in every facet of franchising and associated trade.
+            Un éventail de catégories pour reconnaître l'excellence dans toutes les facettes de la franchise et du commerce associé.
           </p>
         </div>
 

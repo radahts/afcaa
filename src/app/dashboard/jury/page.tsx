@@ -23,9 +23,9 @@ const EvaluationCard = ({ task }: { task: typeof juryTasks[0] }) => {
             <CardHeader>
                 <CardTitle className="font-headline text-xl flex justify-between items-center">
                     <span>{task.category}</span>
-                    {task.progress === task.total && <span className="text-xs font-medium bg-green-100 text-green-800 px-2 py-1 rounded-full flex items-center gap-1"><Check className="h-4 w-4" />Completed</span>}
+                    {task.progress === task.total && <span className="text-xs font-medium bg-green-100 text-green-800 px-2 py-1 rounded-full flex items-center gap-1"><Check className="h-4 w-4" />Terminé</span>}
                 </CardTitle>
-                <CardDescription>Candidate ID: {task.id}</CardDescription>
+                <CardDescription>ID Candidat: {task.id}</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="flex items-center gap-4">
@@ -35,7 +35,7 @@ const EvaluationCard = ({ task }: { task: typeof juryTasks[0] }) => {
             </CardContent>
             <CardFooter>
                 <Button className="w-full" disabled={task.progress === task.total}>
-                    {task.progress === 0 ? "Start Evaluation" : "Continue Evaluation"}
+                    {task.progress === 0 ? "Commencer l'évaluation" : "Continuer l'évaluation"}
                 </Button>
             </CardFooter>
         </Card>
@@ -49,17 +49,17 @@ export default function JuryPage() {
     <div className="container mx-auto py-8">
       <div className="flex justify-between items-start mb-8">
         <div>
-          <h1 className="font-headline text-3xl font-bold">Jury Dashboard</h1>
+          <h1 className="font-headline text-3xl font-bold">Tableau de Bord du Jury</h1>
           <p className="text-muted-foreground">
-            Evaluate assigned applications. All submissions are anonymized.
+            Évaluez les candidatures assignées. Toutes les soumissions sont anonymisées.
           </p>
         </div>
-        {isComplete && <Button variant="primary">Finalize All Evaluations</Button>}
+        {isComplete && <Button variant="primary">Finaliser toutes les évaluations</Button>}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-6">
-            <h2 className="font-headline text-xl font-semibold">Evaluation Tasks</h2>
+            <h2 className="font-headline text-xl font-semibold">Tâches d'évaluation</h2>
             {juryTasks.map(task => (
                 <EvaluationCard key={task.id} task={task} />
             ))}
@@ -70,12 +70,12 @@ export default function JuryPage() {
                 <CardHeader>
                     <div className="flex justify-between items-start">
                         <div>
-                            <CardTitle className="font-headline text-2xl">Evaluating: Social Impact</CardTitle>
-                            <CardDescription>Candidate ID: uuid-beta-002</CardDescription>
+                            <CardTitle className="font-headline text-2xl">Évaluation : Impact Social</CardTitle>
+                            <CardDescription>ID Candidat: uuid-beta-002</CardDescription>
                         </div>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground p-2 bg-muted rounded-md">
                             <Shield className="h-4 w-4 text-green-600"/>
-                            <span>Anonymized</span>
+                            <span>Anonymisé</span>
                         </div>
                     </div>
                 </CardHeader>
@@ -83,7 +83,7 @@ export default function JuryPage() {
                     <div className="relative aspect-video w-full rounded-md overflow-hidden bg-muted">
                         <Image src="https://picsum.photos/seed/blurry/800/450" alt="Blurred candidate photo" fill className="object-cover filter blur-lg" data-ai-hint="business office" />
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <p className="text-muted-foreground font-medium">Photo Anonymized</p>
+                            <p className="text-muted-foreground font-medium">Photo Anonymisée</p>
                         </div>
                     </div>
 
@@ -91,14 +91,14 @@ export default function JuryPage() {
                     
                     <div className="space-y-6">
                         <div>
-                            <Label className="text-base font-medium">Criterion 1: Innovation (Specific)</Label>
+                            <Label className="text-base font-medium">Critère 1 : Innovation (Spécifique)</Label>
                             <div className="flex items-center gap-4 mt-2">
                                 <Slider defaultValue={[65]} max={100} step={1} />
                                 <span className="font-bold font-mono text-lg text-primary w-12 text-center">65</span>
                             </div>
                         </div>
                          <div>
-                            <Label className="text-base font-medium">Criterion 2: Scalability (Transversal)</Label>
+                            <Label className="text-base font-medium">Critère 2 : Scalabilité (Transversal)</Label>
                             <div className="flex items-center gap-4 mt-2">
                                 <Slider defaultValue={[80]} max={100} step={1} />
                                 <span className="font-bold font-mono text-lg text-primary w-12 text-center">80</span>
@@ -106,13 +106,13 @@ export default function JuryPage() {
                         </div>
                     </div>
                      <div className="space-y-2">
-                        <Label className="text-base font-medium">Inline Comments</Label>
-                        <Textarea placeholder="Provide your detailed feedback here. Your comments are crucial for the final deliberation..." rows={5}/>
+                        <Label className="text-base font-medium">Commentaires</Label>
+                        <Textarea placeholder="Fournissez vos commentaires détaillés ici. Vos commentaires sont cruciaux pour la délibération finale..." rows={5}/>
                     </div>
                 </CardContent>
                 <CardFooter className="flex justify-end gap-2">
-                    <Button variant="outline">Save Draft</Button>
-                    <Button>Submit & Lock Score</Button>
+                    <Button variant="outline">Sauvegarder le brouillon</Button>
+                    <Button>Soumettre et verrouiller le score</Button>
                 </CardFooter>
             </Card>
         </div>
