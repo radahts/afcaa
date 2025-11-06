@@ -117,15 +117,17 @@ export const adminStats = [
     { title: "Security Events", value: "0", icon: Shield },
 ]
 
+export const applicationSteps = [
+    { id: '1', name: 'Coordonnées', status: 'current' },
+    { id: '2', name: 'Catégorie', status: 'upcoming' },
+    { id: '3', name: '5 Piliers', status: 'upcoming' },
+    { id: '4', name: 'Résumé', status: 'upcoming' },
+    { id: '5', name: 'Paiement', status: 'upcoming' },
+    { id: '6', name: 'Soumission', status: 'upcoming' },
+];
+
 export const applicationProgress = {
-    steps: [
-      { id: '1', name: 'Coordinates', status: 'complete' },
-      { id: '2', name: 'Category', status: 'complete' },
-      { id: '3', name: '5 Pillars', status: 'current' },
-      { id: '4', name: 'Summary', status: 'upcoming' },
-      { id: '5', name: 'Payment', status: 'upcoming' },
-      { id: '6', name: 'Submission', status: 'upcoming' },
-    ],
-    currentStep: 3,
-    totalSteps: 6
+    steps: applicationSteps,
+    currentStep: 1,
+    totalSteps: applicationSteps.length
 }

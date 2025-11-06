@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -12,8 +14,21 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { Upload, File, X, ArrowRight, ArrowLeft } from "lucide-react";
-import { applicationProgress } from "@/lib/data";
+import { applicationProgress as initialProgress } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import React, { useState } from "react";
+import { useForm, FormProvider, useFormContext } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+  } from "@/components/ui/form"
 
 const AfroLionIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -41,9 +56,16 @@ const AfroLionIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
   );
 
-const ApplicationProgress = () => {
-    const { steps, currentStep, totalSteps } = applicationProgress;
+const ApplicationProgress = ({ currentStep, steps }: { currentStep: number, steps: typeof initialProgress.steps }) => {
+    const totalSteps = steps.length;
     const progressValue = ((currentStep - 1) / (totalSteps -1)) * 100;
+    
+    const updatedSteps = steps.map(step => {
+        const stepIndex = parseInt(step.id);
+        if (stepIndex < currentStep) return { ...step, status: 'complete' };
+        if (stepIndex === currentStep) return { ...step, status: 'current' };
+        return { ...step, status: 'upcoming' };
+    });
 
     return (
         <Card>
@@ -58,7 +80,7 @@ const ApplicationProgress = () => {
                     <span className="font-bold font-mono text-lg text-primary">{Math.round(progressValue)}%</span>
                 </div>
                  <ol className="space-y-4">
-                    {steps.map((step, stepIdx) => (
+                    {updatedSteps.map((step) => (
                         <li key={step.name} className="flex items-center">
                         {step.status === 'complete' ? (
                             <>
@@ -136,47 +158,168 @@ const BarterCode = () => {
     )
 }
 
+const Step1Schema = z.object({
+    companyName: z.string().min(2, "Le nom de l'entreprise doit comporter au moins 2 caractères."),
+    contactName: z.string().min(2, "Le nom du contact doit comporter au moins 2 caractères."),
+    email: z.string().email("L'adresse email n'est pas valide."),
+    phone: z.string().min(10, "Le numéro de téléphone doit comporter au moins 10 chiffres."),
+});
+
+const Step1Form = () => {
+    const methods = useFormContext();
+
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle className="font-headline text-2xl">Étape 1 : Coordonnées de l'entreprise</CardTitle>
+                <CardDescription>Fournissez les informations de base sur votre entreprise et la personne à contacter.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+                <FormField
+                    control={methods.control}
+                    name="companyName"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Nom de l'entreprise</FormLabel>
+                            <FormControl>
+                                <Input placeholder="Votre nom d'entreprise" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={methods.control}
+                    name="contactName"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Nom de la personne à contacter</FormLabel>
+                            <FormControl>
+                                <Input placeholder="Prénom et nom" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={methods.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Email</FormLabel>
+                            <FormControl>
+                                <Input type="email" placeholder="contact@entreprise.com" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                 <FormField
+                    control={methods.control}
+                    name="phone"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Numéro de téléphone</FormLabel>
+                            <FormControl>
+                                <Input placeholder="+XXX XX XXX XXX" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+            </CardContent>
+        </Card>
+    );
+};
+
+const Step3Form = () => (
+    <Card>
+        <CardHeader>
+            <CardTitle className="font-headline text-2xl">Étape 3 : Les 5 Piliers d'Excellence</CardTitle>
+            <CardDescription>Fournissez des preuves et des descriptions détaillées pour chacun des cinq piliers. Téléchargez les documents justificatifs ci-dessous.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+                <div className="space-y-2">
+                <Label htmlFor="pillar1">Pilier 1 : Vision & Stratégie</Label>
+                <Textarea id="pillar1" placeholder="Décrivez la vision et la stratégie à long terme de votre entreprise..." rows={4}/>
+            </div>
+            <div className="space-y-2">
+                <Label htmlFor="pillar2">Pilier 2 : Performance Financière</Label>
+                <Textarea id="pillar2" placeholder="Détaillez votre croissance financière, votre rentabilité et votre stabilité..." rows={4}/>
+            </div>
+                <div className="space-y-2">
+                <Label>Documents justificatifs</Label>
+                <FileUpload />
+            </div>
+        </CardContent>
+    </Card>
+);
+
 export default function ApplicationPage() {
+    const [currentStep, setCurrentStep] = useState(initialProgress.currentStep);
+    const methods = useForm({
+        resolver: zodResolver(Step1Schema),
+    });
+
+    const onSubmit = (data: z.infer<typeof Step1Schema>) => {
+        console.log(data);
+        handleNextStep();
+    };
+
+    const handleNextStep = () => {
+        if (currentStep < initialProgress.totalSteps) {
+            setCurrentStep(currentStep + 1);
+        }
+    };
+
+    const handlePrevStep = () => {
+        if (currentStep > 1) {
+            setCurrentStep(currentStep - 1);
+        }
+    };
+    
+    const renderStep = () => {
+        switch (currentStep) {
+            case 1:
+                return <Step1Form />;
+            case 3:
+                return <Step3Form />;
+            // Add other cases here for other steps
+            default:
+                return <Card><CardHeader><CardTitle>Étape {currentStep}</CardTitle></CardHeader><CardContent>Contenu pour l'étape {currentStep}</CardContent></Card>;
+        }
+    }
+
+
   return (
     <div className="container mx-auto py-8">
         <h1 className="font-headline text-3xl font-bold mb-2">Ma Candidature</h1>
         <p className="text-muted-foreground mb-8">Soumettez votre candidature pour les prix AFCAA 2026.</p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            <div className="lg:col-span-2 space-y-8">
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="font-headline text-2xl">Étape 3 : Les 5 Piliers d'Excellence</CardTitle>
-                        <CardDescription>Fournissez des preuves et des descriptions détaillées pour chacun des cinq piliers. Téléchargez les documents justificatifs ci-dessous.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                         <div className="space-y-2">
-                            <Label htmlFor="pillar1">Pilier 1 : Vision & Stratégie</Label>
-                            <Textarea id="pillar1" placeholder="Décrivez la vision et la stratégie à long terme de votre entreprise..." rows={4}/>
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="pillar2">Pilier 2 : Performance Financière</Label>
-                            <Textarea id="pillar2" placeholder="Détaillez votre croissance financière, votre rentabilité et votre stabilité..." rows={4}/>
-                        </div>
-                         <div className="space-y-2">
-                            <Label>Documents justificatifs</Label>
-                            <FileUpload />
-                        </div>
-                    </CardContent>
-                </Card>
-                
-                <BarterCode />
+        <FormProvider {...methods}>
+            <form onSubmit={methods.handleSubmit(onSubmit)} className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div className="lg:col-span-2 space-y-8">
+                    
+                    {renderStep()}
+                    
+                    {currentStep === 5 && <BarterCode />}
 
-                <div className="flex justify-between">
-                    <Button variant="outline"><ArrowLeft className="mr-2 h-4 w-4"/> Étape précédente</Button>
-                    <Button><ArrowRight className="mr-2 h-4 w-4"/> Étape suivante</Button>
+                    <div className="flex justify-between">
+                        <Button type="button" variant="outline" onClick={handlePrevStep} disabled={currentStep === 1}>
+                            <ArrowLeft className="mr-2 h-4 w-4"/> Étape précédente
+                        </Button>
+                        <Button type={currentStep === 1 ? 'submit' : 'button'} onClick={currentStep !== 1 ? handleNextStep : undefined}>
+                            {currentStep === initialProgress.totalSteps ? 'Soumettre la candidature' : 'Étape suivante'}
+                            {currentStep !== initialProgress.totalSteps && <ArrowRight className="ml-2 h-4 w-4"/>}
+                        </Button>
+                    </div>
+
                 </div>
-
-            </div>
-            <div className="lg:col-span-1 sticky top-24">
-               <ApplicationProgress />
-            </div>
-        </div>
+                <div className="lg:col-span-1 sticky top-24">
+                    <ApplicationProgress currentStep={currentStep} steps={initialProgress.steps} />
+                </div>
+            </form>
+        </FormProvider>
     </div>
   );
 }
