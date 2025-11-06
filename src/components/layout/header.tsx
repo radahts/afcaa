@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Menu, Award } from 'lucide-react';
+import { Menu, Award, Trophy } from 'lucide-react';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -18,6 +18,7 @@ import { getDictionary } from '@/lib/dictionary';
 const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
+    { href: '/laureates', label: 'Laureates' },
     { href: '/vote', label: 'Vote' },
     { href: '/resources', label: 'Resources' },
     { href: '/dashboard', label: 'Dashboard' },

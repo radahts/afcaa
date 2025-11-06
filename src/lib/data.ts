@@ -131,3 +131,50 @@ export const applicationProgress = {
     currentStep: 1,
     totalSteps: applicationSteps.length
 }
+
+export const laureates = [
+    {
+      id: '1',
+      slug: 'amina-diallo-safarigrill',
+      name: "Amina Diallo",
+      company: "SafariGrill",
+      category: "Meilleure enseigne africaine de franchise locale",
+      year: 2024,
+      bio: "Amina Diallo est la fondatrice visionnaire de SafariGrill, une chaîne de restauration rapide qui a su capturer l'essence des saveurs africaines dans un format de franchise moderne. En remportant le prix en 2024, SafariGrill a été reconnu pour son modèle économique robuste, son engagement envers l'approvisionnement local et sa croissance exponentielle à travers l'Afrique de l'Ouest. Amina est une fervente défenseure de l'entrepreneuriat féminin et continue d'inspirer une nouvelle génération de leaders.",
+      photo: "laureate-amina-diallo",
+      quote: "Ce prix n'est pas seulement une reconnaissance pour SafariGrill, mais pour tous les entrepreneurs africains qui osent rêver grand."
+    },
+    {
+      id: '2',
+      slug: 'kwame-asante-ecowear',
+      name: "Kwame Asante",
+      company: "EcoWear",
+      category: "Meilleure franchise verte",
+      year: 2024,
+      bio: "Kwame Asante est le pionnier derrière EcoWear, une marque de vêtements éthiques qui utilise des matériaux recyclés et des teintures naturelles. Son modèle de franchise innovant permet à des artisans locaux de devenir des entrepreneurs en produisant et en vendant des vêtements durables. Lauréat 2024 dans la catégorie 'Meilleure Franchise Verte', EcoWear est un exemple brillant de la manière dont la mode peut être à la fois rentable et respectueuse de la planète.",
+      photo: "laureate-kwame-asante",
+      quote: "Notre mission est de prouver que la durabilité n'est pas un compromis, mais un avantage concurrentiel."
+    },
+    {
+        id: '3',
+        slug: 'chidinma-okoro-techub',
+        name: "Chidinma Okoro",
+        company: "TechHub",
+        category: "Meilleure franchise technologique africaine",
+        year: 2025,
+        bio: "Chidinma Okoro a fondé TechHub avec l'objectif de rendre la technologie accessible à tous. Son réseau de kiosques technologiques franchisés offre des services allant de la réparation de téléphones à la formation au codage dans les zones urbaines et rurales. En 2025, TechHub a remporté le prix pour son impact significatif sur la réduction de la fracture numérique et son modèle de franchise unique qui autonomise les jeunes techniciens.",
+        photo: "laureate-chidinma-okoro",
+        quote: "Nous connectons l'Afrique, un quartier à la fois."
+      },
+      {
+        id: '4',
+        slug: 'jean-pierre-dubois-agriplus',
+        name: "Jean-Pierre Dubois",
+        company: "AgriPlus",
+        category: "Meilleure initiative de commerce rural",
+        year: 2025,
+        bio: "Jean-Pierre Dubois est le cerveau d'AgriPlus, une franchise qui fournit aux petits agriculteurs des semences de haute qualité, des outils modernes et une formation agronomique. Le modèle AgriPlus a transformé les économies rurales en augmentant les rendements et en connectant les agriculteurs à des marchés plus larges. Le prix remporté en 2025 a salué leur contribution exceptionnelle à la sécurité alimentaire et au développement rural durable.",
+        photo: "laureate-jean-pierre-dubois",
+        quote: "L'avenir de l'Afrique se cultive dans ses campagnes."
+      }
+  ];

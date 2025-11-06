@@ -1,8 +1,8 @@
-
 {
     "navigation": {
         "home": "Accueil",
         "about": "À Propos",
+        "laureates": "Lauréats",
         "vote": "Voter",
         "resources": "Ressources",
         "dashboard": "Tableau de bord",
