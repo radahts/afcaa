@@ -1,3 +1,88 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract background with gold and green geometric shapes.",
+      "imageUrl": "https://images.unsplash.com/photo-1641302207066-fae4875554ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhZnJpY2FuJTIwcGF0dGVybnxlbnwwfHx8fDE3NjI0NjgzNTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african pattern"
+    },
+    {
+      "id": "testimonial-avatar-1",
+      "description": "Avatar for a testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1612659513025-fe37f67574d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhZnJpY2FuJTIwd29tYW58ZW58MHx8fHwxNzYyNDY4MzU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african woman"
+    },
+    {
+      "id": "testimonial-avatar-2",
+      "description": "Avatar for a testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1616805765352-beedbad46b2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhZnJpY2FuJTIwbWFufGVufDB8fHx8MTc2MjM5MDAxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african man"
+    },
+    {
+      "id": "testimonial-avatar-3",
+      "description": "Avatar for a testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHBlcnNvbnxlbnwwfHx8fDE3NjI0NTY1OTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business person"
+    },
+    {
+      "id": "partner-logo-1",
+      "description": "Logo for a partner company.",
+      "imageUrl": "https://images.unsplash.com/photo-1562705121-e624542c7b9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29tcGFueSUyMGxvZ298ZW58MHx8fHwxNzYyNDY1ODY5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-logo-2",
+      "description": "Logo for a partner company.",
+      "imageUrl": "https://images.unsplash.com/photo-1662052955098-042b46e60c2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjI0NTIwNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "partner-logo-3",
+      "description": "Logo for a partner company.",
+      "imageUrl": "https://images.unsplash.com/photo-1660602880433-dd978d9ec9f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxicmFuZCUyMGxvZ298ZW58MHx8fHwxNzYyNDY2NDY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "brand logo"
+    },
+    {
+      "id": "partner-logo-4",
+      "description": "Logo for a partner company.",
+      "imageUrl": "https://images.unsplash.com/photo-1679317932564-b3fd1cf1ea92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmaW5hbmNlJTIwbG9nb3xlbnwwfHx8fDE3NjI0NjgzNTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "finance logo"
+    },
+    {
+      "id": "partner-logo-5",
+      "description": "Logo for a partner company.",
+      "imageUrl": "https://images.unsplash.com/photo-1590102426275-8d1c367070d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3RhcnR1cCUyMGxvZ298ZW58MHx8fHwxNzYyMzY2MDIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "startup logo"
+    },
+    {
+      "id": "candidate-photo-1",
+      "description": "Photo of a candidate.",
+      "imageUrl": "https://images.unsplash.com/photo-1600783486418-d366cce3ccbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlbnRyZXByZW5ldXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjIzNzE2MzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "entrepreneur portrait"
+    },
+    {
+      "id": "candidate-photo-2",
+      "description": "Photo of a candidate.",
+      "imageUrl": "https://images.unsplash.com/photo-1598221860268-4c711f099b6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxidXNpbmVzcyUyMG93bmVyfGVufDB8fHx8MTc2MjQ2ODM1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business owner"
+    },
+    {
+      "id": "candidate-photo-3",
+      "description": "Photo of a candidate.",
+      "imageUrl": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjI0NDcxNTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "candidate-photo-4",
+      "description": "Photo of a candidate.",
+      "imageUrl": "https://images.unsplash.com/photo-1689857538296-b6e1a392a91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhZnJpY2FuJTIwaW5ub3ZhdG9yfGVufDB8fHx8MTc2MjQ2ODM1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african innovator"
+    },
+    {
+      "id": "resources-banner",
+      "description": "Banner for the resources page.",
+      "imageUrl": "https://images.unsplash.com/photo-1564316915543-b36a51db1a04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsaWJyYXJ5JTIwa25vd2xlZGdlfGVufDB8fHx8MTc2MjQ2ODM1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "library knowledge"
+    }
+  ]
 }
