@@ -1,9 +1,6 @@
-'use client';
-
 import Link from 'next/link';
 import { Menu, Award } from 'lucide-react';
-import { usePathname } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -18,34 +15,19 @@ import { Locale } from '../../../i18n.config';
 import LanguageSwitcher from './language-switcher';
 import { getDictionary } from '@/lib/dictionary';
 
-
 const navLinks = [
-    { href: '/', labelKey: 'home' },
-    { href: '/about', labelKey: 'about' },
-    { href: '/vote', labelKey: 'vote' },
-    { href: '/resources', labelKey: 'resources' },
-    { href: '/dashboard', labelKey: 'dashboard' },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/vote', label: 'Vote' },
+    { href: '/resources', label: 'Resources' },
+    { href: '/dashboard', label: 'Dashboard' },
 ];
 
-const Header = ({ lang }: { lang: Locale }) => {
-    const pathname = usePathname();
-    const [dictionary, setDictionary] = useState<any>(null);
-
-    useEffect(() => {
-        const fetchDictionary = async () => {
-            const dict = await getDictionary(lang);
-            setDictionary(dict);
-        };
-        fetchDictionary();
-    }, [lang]);
+const Header = async ({ lang }: { lang: Locale }) => {
+    const dictionary = await getDictionary(lang);
+    const labels = dictionary.navigation;
 
     const getLinkPath = (href: string) => `/${lang}${href === '/' ? '' : href}`;
-
-    if (!dictionary) return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-           <div className="container flex h-16 max-w-screen-2xl items-center" />
-       </header>
-    );
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -57,11 +39,10 @@ const Header = ({ lang }: { lang: Locale }) => {
                 key={link.href}
                 href={getLinkPath(link.href)}
                 className={cn(
-                    "text-muted-foreground transition-colors hover:text-primary",
-                    (pathname === getLinkPath(link.href) || (link.href === '/' && pathname === `/${lang}`)) && "text-primary font-semibold"
+                    "text-muted-foreground transition-colors hover:text-primary"
                 )}
                 >
-                {dictionary.navigation[link.labelKey]}
+                {labels[link.label.toLowerCase() as keyof typeof labels]}
                 </Link>
             ))}
             </nav>
@@ -71,11 +52,11 @@ const Header = ({ lang }: { lang: Locale }) => {
                 <Button variant="ghost" asChild className="hidden sm:flex">
                     <Link href={`/${lang}/dashboard/apply`}>
                         <Award className="mr-2 h-4 w-4" />
-                        {dictionary.navigation.apply}
+                        {labels.apply}
                     </Link>
                 </Button>
                 <Button asChild>
-                    <Link href={`/${lang}/dashboard`}>{dictionary.navigation.login}</Link>
+                    <Link href={`/${lang}/dashboard`}>{labels.login}</Link>
                 </Button>
 
             <Sheet>
@@ -94,11 +75,10 @@ const Header = ({ lang }: { lang: Locale }) => {
                             <Link
                                 href={getLinkPath(link.href)}
                                 className={cn(
-                                    "flex items-center py-2 text-lg font-medium text-muted-foreground transition-colors hover:text-primary",
-                                    pathname === getLinkPath(link.href) && "text-primary"
+                                    "flex items-center py-2 text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
                                 )}
                             >
-                                {dictionary.navigation[link.labelKey]}
+                               {labels[link.label.toLowerCase() as keyof typeof labels]}
                             </Link>
                         </SheetClose>
                     ))}
