@@ -3,7 +3,7 @@ import { Poppins, Noto_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
-import { i18n, type Locale } from '../../i18n.config';
+import { i18n, type Locale } from '../i18n.config';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
@@ -19,10 +19,6 @@ const fontNotoSans = Noto_Sans({
   variable: '--font-noto-sans',
 });
 
-export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({ lang: locale }))
-}
-
 export const metadata: Metadata = {
   title: 'AFCAA 2026 - L\'Oscar Africain de la Franchise',
   description: 'Célébrer l\'excellence dans la franchise africaine et le commerce associé.',
@@ -30,6 +26,10 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
 };
+
+export async function generateStaticParams() {
+  return i18n.locales.map(locale => ({ lang: locale }))
+}
 
 export default function RootLayout({
   children,
