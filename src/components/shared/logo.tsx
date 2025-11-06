@@ -27,10 +27,10 @@ const AfroLionIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
   );
 
-const Logo = ({ className }: { className?: string }) => {
+const Logo = ({ className, lang = 'fr' }: { className?: string, lang?: string }) => {
   return (
     <Link
-      href="/"
+      href={`/${lang}`}
       className={cn(
         "flex items-center gap-2 text-foreground transition-colors hover:text-primary",
         className

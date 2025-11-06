@@ -2,8 +2,9 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Locale } from '../../../i18n.config';
 
-const CtaSection = () => {
+const CtaSection = ({ lang }: { lang: Locale }) => {
     const ctaImage = PlaceHolderImages.find(p => p.id === 'hero-background');
   return (
     <section className="relative py-24 sm:py-32 bg-secondary text-primary-foreground">
@@ -25,10 +26,10 @@ const CtaSection = () => {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button asChild size="lg" variant="primary">
-            <Link href="/dashboard/apply">Commencez votre candidature</Link>
+            <Link href={`/${lang}/dashboard/apply`}>Commencez votre candidature</Link>
           </Button>
           <Button asChild size="lg" variant="secondary">
-            <Link href="/contact">Devenez partenaire</Link>
+            <Link href={`/${lang}/contact`}>Devenez partenaire</Link>
           </Button>
         </div>
       </div>

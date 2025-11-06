@@ -1,0 +1,28 @@
+
+{
+    "navigation": {
+        "home": "Accueil",
+        "about": "À Propos",
+        "vote": "Voter",
+        "resources": "Ressources",
+        "dashboard": "Tableau de bord",
+        "apply": "Postuler",
+        "login": "Connexion"
+    },
+    "footer": {
+        "tagline": "L'Oscar de la franchise africaine et du commerce associé.",
+        "quickLinks": "Liens rapides",
+        "categories": "Catégories",
+        "jury": "Le Jury",
+        "contact": "Contact",
+        "legal": "Légal",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation",
+        "cookies": "Politique sur les cookies",
+        "newsletter": "Restez informé",
+        "newsletterHint": "Abonnez-vous à notre newsletter pour les dernières mises à jour.",
+        "emailPlaceholder": "Entrez votre email",
+        "subscribe": "S'abonner",
+        "rights": "Tous droits réservés."
+    }
+}

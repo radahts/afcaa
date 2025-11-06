@@ -1,0 +1,28 @@
+
+{
+    "navigation": {
+        "home": "Início",
+        "about": "Sobre",
+        "vote": "Votar",
+        "resources": "Recursos",
+        "dashboard": "Painel",
+        "apply": "Inscrever-se",
+        "login": "Entrar"
+    },
+    "footer": {
+        "tagline": "O Oscar Africano de Franquia e Comércio Associado.",
+        "quickLinks": "Links Rápidos",
+        "categories": "Categorias",
+        "jury": "O Júri",
+        "contact": "Contato",
+        "legal": "Legal",
+        "privacy": "Política de Privacidade",
+        "terms": "Termos de Uso",
+        "cookies": "Política de Cookies",
+        "newsletter": "Mantenha-se Informado",
+        "newsletterHint": "Subscreva a nossa newsletter para as últimas atualizações.",
+        "emailPlaceholder": "Digite seu e-mail",
+        "subscribe": "Subscrever",
+        "rights": "Todos os direitos reservados."
+    }
+}

@@ -1,0 +1,28 @@
+
+{
+    "navigation": {
+        "home": "Home",
+        "about": "About",
+        "vote": "Vote",
+        "resources": "Resources",
+        "dashboard": "Dashboard",
+        "apply": "Apply",
+        "login": "Login"
+    },
+    "footer": {
+        "tagline": "The African Franchise and Associated Commerce Awards.",
+        "quickLinks": "Quick Links",
+        "categories": "Categories",
+        "jury": "The Jury",
+        "contact": "Contact",
+        "legal": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use",
+        "cookies": "Cookie Policy",
+        "newsletter": "Stay Informed",
+        "newsletterHint": "Subscribe to our newsletter for the latest updates.",
+        "emailPlaceholder": "Enter your email",
+        "subscribe": "Subscribe",
+        "rights": "All rights reserved."
+    }
+}

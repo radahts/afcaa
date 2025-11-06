@@ -1,17 +1,27 @@
+'use server'
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Logo from "../shared/logo";
 import { Twitter, Linkedin, Facebook } from 'lucide-react';
+import LanguageSwitcher from "./language-switcher";
+import { getDictionary } from "@/lib/dictionary";
+import React from "react";
+import { Locale } from "../../../i18n.config";
 
-const Footer = () => {
+const Footer = async ({ lang }: { lang: Locale }) => {
+  const dictionary = await getDictionary(lang);
+
+  if (!dictionary) return null;
+
+
   return (
     <footer className="border-t bg-card text-card-foreground">
       <div className="container grid grid-cols-1 gap-12 py-12 md:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <Logo />
+          <Logo lang={lang} />
           <p className="text-sm text-muted-foreground">
-            L'Oscar de la franchise africaine et du commerce associé.
+            {dictionary.footer.tagline}
           </p>
           <div className="flex items-center gap-3">
             <Link href="#" aria-label="Twitter">
@@ -27,38 +37,41 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-semibold">Liens rapides</h4>
+          <h4 className="font-headline text-lg font-semibold">{dictionary.footer.quickLinks}</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link href="/about" className="text-muted-foreground hover:text-primary">À propos de nous</Link></li>
-            <li><Link href="/categories" className="text-muted-foreground hover:text-primary">Catégories</Link></li>
-            <li><Link href="/jury" className="text-muted-foreground hover:text-primary">Le Jury</Link></li>
-            <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
+            <li><Link href={`/${lang}/about`} className="text-muted-foreground hover:text-primary">{dictionary.navigation.about}</Link></li>
+            <li><Link href={`/${lang}/#categories`} className="text-muted-foreground hover:text-primary">{dictionary.footer.categories}</Link></li>
+            <li><Link href={`/${lang}/#jury`} className="text-muted-foreground hover:text-primary">{dictionary.footer.jury}</Link></li>
+            <li><Link href={`/${lang}/contact`} className="text-muted-foreground hover:text-primary">{dictionary.footer.contact}</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-semibold">Légal</h4>
+          <h4 className="font-headline text-lg font-semibold">{dictionary.footer.legal}</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link href="/privacy" className="text-muted-foreground hover:text-primary">Politique de confidentialité</Link></li>
-            <li><Link href="/terms" className="text-muted-foreground hover:text-primary">Conditions d'utilisation</Link></li>
-            <li><Link href="/cookies" className="text-muted-foreground hover:text-primary">Politique sur les cookies</Link></li>
+            <li><Link href={`/${lang}/privacy`} className="text-muted-foreground hover:text-primary">{dictionary.footer.privacy}</Link></li>
+            <li><Link href={`/${lang}/terms`} className="text-muted-foreground hover:text-primary">{dictionary.footer.terms}</Link></li>
+            <li><Link href={`/${lang}/cookies`} className="text-muted-foreground hover:text-primary">{dictionary.footer.cookies}</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-semibold">Restez informé</h4>
+          <h4 className="font-headline text-lg font-semibold">{dictionary.footer.newsletter}</h4>
           <p className="mt-4 text-sm text-muted-foreground">
-            Abonnez-vous à notre newsletter pour les dernières mises à jour.
+           {dictionary.footer.newsletterHint}
           </p>
           <form className="mt-4 flex gap-2">
-            <Input type="email" placeholder="Entrez votre email" className="flex-1" />
-            <Button type="submit" variant="default">S'abonner</Button>
+            <Input type="email" placeholder={dictionary.footer.emailPlaceholder} className="flex-1" />
+            <Button type="submit" variant="default">{dictionary.footer.subscribe}</Button>
           </form>
+          <div className="mt-4">
+              <LanguageSwitcher />
+          </div>
         </div>
       </div>
       <div className="border-t">
         <div className="container py-4 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} AFCAA. Tous droits réservés.
+          © {new Date().getFullYear()} AFCAA. {dictionary.footer.rights}
         </div>
       </div>
     </footer>
