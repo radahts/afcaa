@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { Menu, Award } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -12,9 +14,7 @@ import {
 } from '@/components/ui/sheet';
 import Logo from '@/components/shared/logo';
 import { cn } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
 import { getDictionary } from '@/lib/dictionary';
-import React from 'react';
 import { Locale } from '../../../i18n.config';
 
 
@@ -26,21 +26,29 @@ const navLinks = [
     { href: '/dashboard', labelKey: 'dashboard' },
 ];
 
-const HeaderContent = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
+const HeaderClient = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
     const pathname = usePathname();
+
+    if (!dictionary) return (
+        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+           <div className="container flex h-16 max-w-screen-2xl items-center">
+               {/* Skeleton or loading state */}
+           </div>
+       </header>
+    );
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 max-w-screen-2xl items-center">
             <Logo lang={lang} />
             <nav className="ml-10 hidden flex-1 gap-6 text-sm font-medium md:flex">
-            {navLinks.map((link) => (
+            {(navLinks).map((link) => (
                 <Link
                 key={link.href}
                 href={`/${lang}${link.href === '/' ? '' : link.href}`}
                 className={cn(
                     "text-muted-foreground transition-colors hover:text-primary",
-                    pathname === `/${lang}${link.href}` && "text-primary font-semibold"
+                    (pathname === `/${lang}${link.href}` || (link.href === '/' && pathname === `/${lang}`)) && "text-primary font-semibold"
                 )}
                 >
                 {dictionary.navigation[link.labelKey]}
@@ -93,51 +101,19 @@ const HeaderContent = ({ dictionary, lang }: { dictionary: any, lang: Locale }) 
     )
 }
 
+
 const Header = ({ lang }: { lang: Locale }) => {
     const [dictionary, setDictionary] = React.useState<any>(null);
 
     React.useEffect(() => {
-        const fetchDictionary = async () => {
+        const fetchDict = async () => {
             const dict = await getDictionary(lang);
             setDictionary(dict);
-        };
-        fetchDictionary();
+        }
+        fetchDict();
     }, [lang]);
 
-    if (!dictionary) {
-        return (
-             <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-                <div className="container flex h-16 max-w-screen-2xl items-center">
-                    {/* Skeleton or loading state */}
-                </div>
-            </header>
-        );
-    }
-
-    return <HeaderContent dictionary={dictionary} lang={lang} />;
+    return <HeaderClient dictionary={dictionary} lang={lang} />;
 };
 
-
-const HeaderWrapper = ({ lang }: { lang: Locale }) => {
-  const [dictionary, setDictionary] = React.useState<any>(null);
-
-  React.useEffect(() => {
-    const fetchDictionary = async () => {
-      const dict = await getDictionary(lang);
-      setDictionary(dict);
-    };
-    fetchDictionary();
-  }, [lang]);
-
-  if (!dictionary) {
-    return (
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 max-w-screen-2xl items-center" />
-      </header>
-    );
-  }
-
-  return <HeaderContent dictionary={dictionary} lang={lang} />;
-};
-
-export default HeaderWrapper;
+export default Header;
