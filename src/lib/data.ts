@@ -1,36 +1,61 @@
-import { Award, BarChart, Briefcase, Gem, Lightbulb, UserCheck, Users, TrendingUp, FileText, BarChart2, Zap, Shield } from "lucide-react";
+import { Award, BarChart, Briefcase, Gem, Lightbulb, UserCheck, Users, TrendingUp, FileText, BarChart2, Zap, Shield, Building, Globe, Recycle, GitMerge, Scaling, Handshake, Sprout, Network, University, Library, Banknote, Speaker, Bot } from "lucide-react";
 
 export const categories = [
   {
-    icon: Gem,
-    title: "Franchise of the Year (C1-C11)",
-    description: "Recognizing overall excellence in franchising.",
+      icon: Gem,
+      title: "Meilleure enseigne africaine de franchise locale (C1)",
+      description: "Récompense une marque africaine ayant développé un modèle de franchise performant, adapté au contexte local.",
   },
   {
-    icon: Lightbulb,
-    title: "Emerging Franchise (M1-M6)",
-    description: "Celebrating the most promising new franchise concepts.",
+      icon: Globe,
+      title: "Meilleure chaîne de distribution régionale (C2)",
+      description: "Distinction pour un réseau ayant réussi à s’étendre efficacement dans plusieurs pays d’une même région.",
   },
   {
-    icon: Users,
-    title: "Social Impact (AS1-AS10)",
-    description: "Awarding franchises that make a significant social contribution.",
+      icon: Users,
+      title: "Meilleur réseau de distribution communautaire (C3)",
+      description: "Valorise les modèles qui intègrent les communautés locales dans leur chaîne de valeur.",
   },
   {
-    icon: TrendingUp,
-    title: "Master Franchisee Award",
-    description: "Honoring the most successful master franchisee.",
+      icon: Bot,
+      title: "Meilleure franchise technologique africaine (C4)",
+      description: "Récompense les modèles utilisant la tech pour transformer le commerce de proximité.",
   },
   {
-    icon: Award,
-    title: "Best Customer Service",
-    description: "For franchises that provide an outstanding customer experience.",
+      icon: Handshake,
+      title: "Meilleure initiative de commerce rural (C5)",
+      description: "Met en lumière les projets qui revitalisent l’économie rurale via des modèles commerciaux inclusifs.",
   },
   {
-    icon: Zap,
-    title: "Innovation in Technology",
-    description: "Recognizing the use of technology to improve franchise operations.",
+      icon: Scaling,
+      title: "Meilleur intégrateur de l’économie informelle (C6)",
+      description: "Récompense les acteurs ayant réussi à formaliser des micro-entrepreneurs informels.",
   },
+  {
+      icon: Recycle,
+      title: "Meilleure franchise verte (C7)",
+      description: "Distinction pour les modèles ayant une empreinte environnementale minimale et des pratiques circulaires.",
+  },
+  {
+      icon: GitMerge,
+      title: "Meilleur modèle inclusif (genre, jeunes, handicap) (C8)",
+      description: "Valorise les enseignes ayant une stratégie omnicanale réussie (e-commerce + physique).",
+  },
+  {
+      icon: Building,
+      title: "Meilleure franchise digitale (C9)",
+      description: "Établissement d'hospitalité incluant hôtels, pensions, camping, etc., destiné à l'accueil des clients.",
+  },
+  {
+      icon: Sprout,
+      title: "Meilleure franchise émergente (moins de 3 ans) (C10)",
+      description: "Met en avant les jeunes pousses à fort potentiel.",
+  },
+  {
+      icon: Award,
+      title: "Meilleure franchise internationale en Afrique (C11)",
+      description: "Distinction pour une marque étrangère ayant su s’adapter avec succès au marché africain.",
+  }
 ];
 
 export const testimonials = [
