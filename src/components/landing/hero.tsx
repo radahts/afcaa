@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Medal, Users, Vote } from 'lucide-react';
-import { Locale } from '../../../i18n.config';
 
 const ShineButton = ({ children, href }: { children: React.ReactNode, href: string }) => (
     <Button asChild size="lg" className="relative overflow-hidden group">
@@ -14,7 +13,7 @@ const ShineButton = ({ children, href }: { children: React.ReactNode, href: stri
     </Button>
   );
 
-const Hero = ({ lang }: { lang: Locale }) => {
+const Hero = () => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
@@ -39,9 +38,9 @@ const Hero = ({ lang }: { lang: Locale }) => {
           Célébrer les entrepreneurs visionnaires et les marques de classe mondiale qui façonnent l'avenir du commerce sur le continent.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ShineButton href={`/${lang}/dashboard/apply`}>Postuler pour un Prix</ShineButton>
+            <ShineButton href="/dashboard/apply">Postuler pour un Prix</ShineButton>
             <Button asChild size="lg" variant="outline">
-                <Link href={`/${lang}/vote`}>Votez</Link>
+                <Link href="/vote">Votez</Link>
             </Button>
         </div>
       </div>

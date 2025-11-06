@@ -5,7 +5,6 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import { i18n, Locale } from '../../i18n.config';
 
 const fontPoppins = Poppins({
   subsets: ['latin'],
@@ -19,10 +18,6 @@ const fontNotoSans = Noto_Sans({
   variable: '--font-noto-sans',
 });
 
-export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({ lang: locale }))
-}
-
 export const metadata: Metadata = {
   title: 'AFCAA 2026 - L\'Oscar Africain de la Franchise',
   description: 'Célébrer l\'excellence dans la franchise africaine et le commerce associé.',
@@ -33,13 +28,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: Locale };
 }>) {
   return (
-    <html lang={params.lang} suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -53,9 +46,9 @@ export default function RootLayout({
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
-          <Header lang={params.lang} />
+          <Header />
           <main className="flex-1">{children}</main>
-          <Footer lang={params.lang} />
+          <Footer />
         </div>
         <Toaster />
       </body>

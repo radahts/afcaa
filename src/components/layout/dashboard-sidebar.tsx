@@ -24,52 +24,50 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Locale } from "../../../i18n.config";
 
-const sidebarNavItems = (lang: Locale) => [
+const sidebarNavItems = [
   {
     title: "Espace Candidat",
-    href: `/${lang}/dashboard/apply`,
+    href: "/dashboard/apply",
     icon: Award,
     role: "candidate",
   },
   {
     title: "Tableau de Bord Jury",
-    href: `/${lang}/dashboard/jury`,
+    href: "/dashboard/jury",
     icon: Users,
     role: "jury",
   },
   {
     title: "Analytiques Partenaire",
-    href: `/${lang}/dashboard/partner`,
+    href: "/dashboard/partner",
     icon: BarChart2,
     role: "partner",
   },
   {
     title: "Panneau Admin",
-    href: `/${lang}/dashboard/admin`,
+    href: "/dashboard/admin",
     icon: Shield,
     role: "admin",
   },
 ];
 
-export default function DashboardSidebar({ lang }: { lang: Locale }) {
+export default function DashboardSidebar() {
   const pathname = usePathname();
 
   // In a real app, this would come from an auth context
   const userRoles = ["candidate", "jury", "partner", "admin"];
-  const sidebarNav = sidebarNavItems(lang);
 
   return (
     <aside className="hidden lg:flex flex-col w-72 border-r bg-card">
       <div className="h-16 flex items-center px-6 border-b">
-        <Logo lang={lang} />
+        <Logo />
       </div>
       <div className="flex-1 overflow-y-auto">
         <nav className="flex flex-col px-4 py-4">
           <Accordion type="multiple" defaultValue={userRoles} className="w-full">
             {userRoles.map((role) => {
-              const items = sidebarNav.filter((item) => item.role === role);
+              const items = sidebarNavItems.filter((item) => item.role === role);
               if (items.length === 0) return null;
               
               return (
@@ -116,7 +114,7 @@ export default function DashboardSidebar({ lang }: { lang: Locale }) {
                 </div>
               </div>
               <Button variant="ghost" size="icon" asChild>
-                  <Link href={`/${lang}`}>
+                  <Link href="/">
                     <LogOut className="h-4 w-4" />
                   </Link>
               </Button>
