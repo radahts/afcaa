@@ -15,6 +15,7 @@ import {
 import Logo from '@/components/shared/logo';
 import { cn } from '@/lib/utils';
 import { Locale } from '../../../i18n.config';
+import LanguageSwitcher from './language-switcher';
 
 
 const navLinks = [
@@ -28,11 +29,11 @@ const navLinks = [
 const HeaderClient = ({ dictionary, lang }: { dictionary: any, lang: Locale }) => {
     const pathname = usePathname();
 
+    const getLinkPath = (href: string) => `/${lang}${href === '/' ? '' : href}`;
+
     if (!dictionary) return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-           <div className="container flex h-16 max-w-screen-2xl items-center">
-               {/* Skeleton or loading state */}
-           </div>
+           <div className="container flex h-16 max-w-screen-2xl items-center" />
        </header>
     );
 
@@ -44,10 +45,10 @@ const HeaderClient = ({ dictionary, lang }: { dictionary: any, lang: Locale }) =
             {(navLinks).map((link) => (
                 <Link
                 key={link.href}
-                href={`/${lang}${link.href === '/' ? '' : link.href}`}
+                href={getLinkPath(link.href)}
                 className={cn(
                     "text-muted-foreground transition-colors hover:text-primary",
-                    (pathname === `/${lang}${link.href}` || (link.href === '/' && pathname === `/${lang}`)) && "text-primary font-semibold"
+                    (pathname === getLinkPath(link.href) || (link.href === '/' && pathname === `/${lang}`)) && "text-primary font-semibold"
                 )}
                 >
                 {dictionary.navigation[link.labelKey]}
@@ -56,6 +57,7 @@ const HeaderClient = ({ dictionary, lang }: { dictionary: any, lang: Locale }) =
             </nav>
 
             <div className="flex flex-1 items-center justify-end gap-2">
+                <LanguageSwitcher />
                 <Button variant="ghost" asChild className="hidden sm:flex">
                     <Link href={`/${lang}/dashboard/apply`}>
                         <Award className="mr-2 h-4 w-4" />
@@ -80,10 +82,10 @@ const HeaderClient = ({ dictionary, lang }: { dictionary: any, lang: Locale }) =
                     {navLinks.map((link) => (
                         <SheetClose asChild key={link.href}>
                             <Link
-                                href={`/${lang}${link.href === '/' ? '' : link.href}`}
+                                href={getLinkPath(link.href)}
                                 className={cn(
                                     "flex items-center py-2 text-lg font-medium text-muted-foreground transition-colors hover:text-primary",
-                                    pathname === `/${lang}${link.href}` && "text-primary"
+                                    pathname === getLinkPath(link.href) && "text-primary"
                                 )}
                             >
                                 {dictionary.navigation[link.labelKey]}

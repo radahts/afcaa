@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Locale } from "../../../i18n.config";
 
 const AfroLionIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -27,10 +28,11 @@ const AfroLionIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
   );
 
-const Logo = ({ className }: { className?: string }) => {
+const Logo = ({ className, lang }: { className?: string, lang?: Locale }) => {
+  const path = lang ? `/${lang}`: '/';
   return (
     <Link
-      href="/"
+      href={path}
       className={cn(
         "flex items-center gap-2 text-foreground transition-colors hover:text-primary",
         className
