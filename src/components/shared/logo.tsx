@@ -1,32 +1,7 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Locale } from "../../../i18n.config";
-
-const AfroLionIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M12 5.5A3.5 3.5 0 0 1 15.5 9" />
-      <path d="M12 5.5A3.5 3.5 0 0 0 8.5 9" />
-      <path d="M4 12c0-2.5 1.5-4.5 4-5" />
-      <path d="M20 12c0-2.5-1.5-4.5-4-5" />
-      <path d="M8 14v1" />
-      <path d="M16 14v1" />
-      <path d="M8.5 18h7" />
-      <path d="M11 20h2" />
-      <path d="M4.5 10.5c-1.5 0-3 1.5-3 3.5" />
-      <path d="M19.5 10.5c1.5 0 3 1.5 3 3.5" />
-      <path d="M9.5 16s-1.5 1.5-1.5 2.5" />
-      <path d="M14.5 16s1.5 1.5 1.5 2.5" />
-    </svg>
-  );
+import Image from "next/image";
 
 const Logo = ({ className, lang }: { className?: string, lang?: Locale }) => {
   const path = lang ? `/${lang}`: '/';
@@ -38,8 +13,8 @@ const Logo = ({ className, lang }: { className?: string, lang?: Locale }) => {
         className
       )}
     >
-      <AfroLionIcon className="h-8 w-8 text-primary" />
-      <span className="font-headline text-2xl font-bold tracking-tight">
+      <Image src="https://firebasestorage.googleapis.com/v0/b/app-confo.appspot.com/o/public%2Fstudioccp%2F6131362%2Flogo_afcaa.png?alt=media&token=86d34cc8-f033-4f93-a442-f5424d9c8c5c" alt="AFCAA Logo" width={40} height={40} />
+      <span className="font-headline text-xl font-bold tracking-tight hidden sm:inline">
         AFCAA <span className="text-primary">2026</span>
       </span>
     </Link>

@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
-import { Upload, File, X, ArrowRight, ArrowLeft } from "lucide-react";
+import { Upload, File, X, ArrowRight, ArrowLeft, Award } from "lucide-react";
 import { applicationProgress as initialProgress } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
@@ -29,32 +29,6 @@ import {
     FormLabel,
     FormMessage,
   } from "@/components/ui/form"
-
-const AfroLionIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M12 5.5A3.5 3.5 0 0 1 15.5 9" />
-      <path d="M12 5.5A3.5 3.5 0 0 0 8.5 9" />
-      <path d="M4 12c0-2.5 1.5-4.5 4-5" />
-      <path d="M20 12c0-2.5-1.5-4.5-4-5" />
-      <path d="M8 14v1" />
-      <path d="M16 14v1" />
-      <path d="M8.5 18h7" />
-      <path d="M11 20h2" />
-      <path d="M4.5 10.5c-1.5 0-3 1.5-3 3.5" />
-      <path d="M19.5 10.5c1.5 0 3 1.5 3 3.5" />
-      <path d="M9.5 16s-1.5 1.5-1.5 2.5" />
-      <path d="M14.5 16s1.5 1.5 1.5 2.5" />
-    </svg>
-  );
 
 const ApplicationProgress = ({ currentStep, steps }: { currentStep: number, steps: typeof initialProgress.steps }) => {
     const totalSteps = steps.length;
@@ -75,7 +49,7 @@ const ApplicationProgress = ({ currentStep, steps }: { currentStep: number, step
             </CardHeader>
             <CardContent>
                 <div className="flex items-center gap-4 mb-4">
-                    <AfroLionIcon className={cn("h-10 w-10 text-primary transition-transform", progressValue === 100 && "animate-bounce")} />
+                    <Award className={cn("h-10 w-10 text-primary transition-transform", progressValue === 100 && "animate-bounce")} />
                     <Progress value={progressValue} className="w-full" />
                     <span className="font-bold font-mono text-lg text-primary">{Math.round(progressValue)}%</span>
                 </div>

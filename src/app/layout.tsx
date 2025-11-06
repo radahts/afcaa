@@ -3,7 +3,7 @@ import { Poppins, Noto_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
-import { type Locale } from '../../i18n.config';
+import { type Locale } from '../i18n.config';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
@@ -49,7 +49,7 @@ export default function RootLayout({
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
-          <Header lang={params.lang} />
+          <Header />
           <main className="flex-1">{children}</main>
           <Footer lang={params.lang} />
         </div>
