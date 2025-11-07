@@ -49,7 +49,7 @@ export default function RootLayout({
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
-          <Header />
+          <Header lang={params.lang} />
           <main className="flex-1">{children}</main>
           <Footer lang={params.lang} />
         </div>

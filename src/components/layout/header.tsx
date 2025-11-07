@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { Menu, Award } from 'lucide-react';
 import React from 'react';
@@ -13,83 +11,57 @@ import {
 } from '@/components/ui/sheet';
 import Logo from '@/components/shared/logo';
 import { cn } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
 import LanguageSwitcher from './language-switcher';
+import { getDictionary } from '@/lib/dictionary';
+import { Locale } from '../../../i18n.config';
+import MobileNav from './mobile-nav';
 
 const navLinks = [
-    { href: '/', label: 'Accueil', key: 'home' },
-    { href: '/about', label: 'À Propos', key: 'about' },
-    { href: '/laureates', label: 'Lauréats', key: 'laureates' },
-    { href: '/vote', label: 'Voter', key: 'vote' },
-    { href: '/resources', label: 'Ressources', key: 'resources' },
-    { href: '/dashboard', label: 'Tableau de bord', key: 'dashboard' },
+    { href: '/', labelKey: 'home' },
+    { href: '/about', labelKey: 'about' },
+    { href: '/laureates', labelKey: 'laureates' },
+    { href: '/vote', labelKey: 'vote' },
+    { href: '/resources', labelKey: 'resources' },
+    { href: '/dashboard', labelKey: 'dashboard' },
 ];
 
-const Header = () => {
-    const pathname = usePathname();
-    const lang = pathname.split('/')[1] || 'fr';
+const Header = async ({ lang }: { lang: Locale }) => {
+    const dictionary = await getDictionary(lang);
+    const t = dictionary.navigation;
 
     const getLinkPath = (href: string) => `/${lang}${href === '/' ? '' : href}`;
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 max-w-screen-2xl items-center">
-            <Logo lang={lang as any} />
-            <nav className="ml-10 hidden flex-1 gap-6 text-sm font-medium md:flex">
-            {(navLinks).map((link) => (
-                <Link
-                key={link.href}
-                href={getLinkPath(link.href)}
-                className={cn(
-                    "text-muted-foreground transition-colors hover:text-primary"
-                )}
-                >
-                {link.label}
-                </Link>
-            ))}
-            </nav>
-
-            <div className="flex flex-1 items-center justify-end gap-2">
-                <LanguageSwitcher />
-                <Button variant="ghost" asChild className="hidden sm:flex">
-                    <Link href={`/${lang}/dashboard/apply`}>
-                        <Award className="mr-2 h-4 w-4" />
-                        Postuler
-                    </Link>
-                </Button>
-                <Button asChild>
-                    <Link href={`/${lang}/dashboard`}>Connexion</Link>
-                </Button>
-
-            <Sheet>
-                <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="md:hidden">
-                    <Menu className="h-5 w-5" />
-                    <span className="sr-only">Toggle navigation menu</span>
-                </Button>
-                </SheetTrigger>
-                <SheetContent side="left">
-                <div className="flex flex-col gap-6">
-                    <Logo lang={lang as any} />
-                    <nav className="grid gap-4">
+            <div className="container flex h-16 max-w-screen-2xl items-center">
+                <Logo lang={lang} />
+                <nav className="ml-10 hidden flex-1 gap-6 text-sm font-medium md:flex">
                     {navLinks.map((link) => (
-                        <SheetClose asChild key={link.href}>
-                            <Link
-                                href={getLinkPath(link.href)}
-                                className={cn(
-                                    "flex items-center py-2 text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
-                                )}
-                            >
-                               {link.label}
-                            </Link>
-                        </SheetClose>
+                        <Link
+                            key={link.href}
+                            href={getLinkPath(link.href)}
+                            className="text-muted-foreground transition-colors hover:text-primary"
+                        >
+                            {t[link.labelKey as keyof typeof t]}
+                        </Link>
                     ))}
-                    </nav>
+                </nav>
+
+                <div className="flex flex-1 items-center justify-end gap-2">
+                    <LanguageSwitcher />
+                    <Button variant="ghost" asChild className="hidden sm:flex">
+                        <Link href={getLinkPath('/dashboard/apply')}>
+                            <Award className="mr-2 h-4 w-4" />
+                            {t.apply}
+                        </Link>
+                    </Button>
+                    <Button asChild>
+                        <Link href={getLinkPath('/dashboard')}>{t.login}</Link>
+                    </Button>
+
+                    <MobileNav navLinks={navLinks} dictionary={t} lang={lang} />
                 </div>
-                </SheetContent>
-            </Sheet>
             </div>
-        </div>
         </header>
     )
 }
