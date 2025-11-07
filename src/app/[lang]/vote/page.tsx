@@ -200,7 +200,6 @@ const VoteDialog = ({ candidate, open, onOpenChange }: { candidate: Candidate | 
 
 
 export default function VotePage() {
-    const [candidates, setCandidates] = useState(initialCandidates);
     const [selectedCandidate, setSelectedCandidate] = useState<Candidate | null>(null);
     const [isVoteDialogOpen, setIsVoteDialogOpen] = useState(false);
 
@@ -217,14 +216,14 @@ export default function VotePage() {
             <div className="lg:col-span-2">
                 <h2 className="font-headline text-2xl font-bold mb-6">Principaux concurrents</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {candidates.map((candidate) => (
+                    {initialCandidates.map((candidate) => (
                         <CandidateCard key={candidate.id} candidate={candidate} onVote={handleVote} />
                     ))}
                 </div>
             </div>
             <div>
                 <h2 className="font-headline text-2xl font-bold mb-6">Classement</h2>
-                <Leaderboard candidates={candidates} />
+                <Leaderboard candidates={initialCandidates} />
             </div>
         </div>
       </div>

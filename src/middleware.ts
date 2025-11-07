@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-import { i18n } from '../i18n.config'
+import { i18n } from './i18n.config'
 
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
@@ -20,7 +20,6 @@ function getLocale(request: NextRequest): string | undefined {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
-  
   const pathnameIsMissingLocale = i18n.locales.every(
     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   )
@@ -38,7 +37,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // We can enable the matcher to run only on pages and not on files.
-  // See: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
-  matcher: ['/((?!api|_next/static|_next/image|.*\\..*).*)']
+  // Matcher ignoring `/_next/` and `/api/`
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
 }

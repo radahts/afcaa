@@ -3,12 +3,28 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Logo from "../shared/logo";
 import { Twitter, Linkedin, Facebook } from 'lucide-react';
-import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "../../../i18n.config";
 
-const Footer = async ({ lang }: { lang: Locale }) => {
-  const dictionary = await getDictionary(lang);
-  const t = dictionary.footer;
+type FooterDictionary = {
+    tagline: string;
+    quickLinks: string;
+    about: string;
+    categories: string;
+    jury: string;
+    contact: string;
+    legal: string;
+    privacy: string;
+    terms: string;
+    cookies: string;
+    newsletter: string;
+    newsletterHint: string;
+    emailPlaceholder: string;
+    subscribe: string;
+    rights: string;
+}
+
+const Footer = ({ lang, dictionary }: { lang: Locale, dictionary: FooterDictionary }) => {
+  const t = dictionary;
 
   return (
     <footer className="border-t bg-card text-card-foreground">

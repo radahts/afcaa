@@ -1,18 +1,12 @@
+'use client';
+
 import Link from 'next/link';
-import { Menu, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetClose,
-} from '@/components/ui/sheet';
 import Logo from '@/components/shared/logo';
-import { cn } from '@/lib/utils';
 import LanguageSwitcher from './language-switcher';
-import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '../../../i18n.config';
 import MobileNav from './mobile-nav';
 
@@ -25,10 +19,12 @@ const navLinks = [
     { href: '/dashboard', labelKey: 'dashboard' },
 ];
 
-const Header = async ({ lang }: { lang: Locale }) => {
-    const dictionary = await getDictionary(lang);
-    const t = dictionary.navigation;
+type NavigationDictionary = {
+    [key in 'home' | 'about' | 'laureates' | 'vote' | 'resources' | 'dashboard' | 'apply' | 'login']: string;
+}
 
+export default function Header({ lang, dictionary }: { lang: Locale, dictionary: NavigationDictionary }) {
+    const t = dictionary;
     const getLinkPath = (href: string) => `/${lang}${href === '/' ? '' : href}`;
 
     return (
@@ -65,5 +61,3 @@ const Header = async ({ lang }: { lang: Locale }) => {
         </header>
     )
 }
-
-export default Header;

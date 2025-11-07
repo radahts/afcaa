@@ -17,7 +17,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        headline: ['var(--font-poppins)', 'sans-serif'],
+        headline: ['Poppins', 'sans-serif'],
         body: ['var(--font-noto-sans)', 'sans-serif'],
       },
       colors: {
@@ -94,15 +94,10 @@ export default {
             height: '0',
           },
         },
-        'shine': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
-        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'shine': 'shine 1.5s ease-in-out infinite',
       },
     },
   },
