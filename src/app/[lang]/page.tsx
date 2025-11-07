@@ -3,6 +3,7 @@ import Categories from '@/components/landing/categories';
 import Testimonials from '@/components/landing/testimonials';
 import CtaSection from '@/components/landing/cta-section';
 import { Locale } from '../../../i18n.config';
+import Partners from '@/components/landing/partners';
 
 export default function Home({ params: { lang } }: { params: { lang: Locale } }) {
   return (
