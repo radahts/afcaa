@@ -26,7 +26,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import type { Icon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { partnerStats } from "@/lib/data";
 
 const chartData = [
@@ -46,7 +46,7 @@ const roiData = [
     { activity: 'Branding de l\'événement de gala', impressions: 'N/A', leads: 25, signed: 2, status: 'À venir' },
 ]
 
-const StatCard = ({ title, value, change, icon: Icon }: { title: string, value: string, change: string, icon: Icon }) => (
+const StatCard = ({ title, value, change, icon: Icon }: { title: string, value: string, change: string, icon: LucideIcon }) => (
     <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{title}</CardTitle>

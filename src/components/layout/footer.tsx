@@ -7,7 +7,7 @@ import Logo from "../shared/logo";
 import { Twitter, Linkedin, Facebook } from 'lucide-react';
 import { Locale } from "../../../i18n.config";
 
-type FooterDictionary = {
+export type FooterDictionary = {
     tagline: string;
     quickLinks: string;
     about: string;

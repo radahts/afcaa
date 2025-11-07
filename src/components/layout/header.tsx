@@ -19,7 +19,7 @@ const navLinks = [
     { href: '/dashboard', labelKey: 'dashboard' },
 ];
 
-type NavigationDictionary = {
+export type NavigationDictionary = {
     [key in 'home' | 'about' | 'laureates' | 'vote' | 'resources' | 'dashboard' | 'apply' | 'login']: string;
 }
 
