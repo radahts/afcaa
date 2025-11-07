@@ -1,5 +1,5 @@
 import DashboardSidebar from "@/components/layout/dashboard-sidebar";
-import { Locale } from "../../../../i18n.config";
+import { Locale } from "../../../i18n.config";
 
 export default function DashboardLayout({
   children,
