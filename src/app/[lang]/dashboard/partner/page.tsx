@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -80,8 +81,8 @@ export default function PartnerPage() {
                     <LineChart data={chartData}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
-                        <YAxis yAxisId="left" stroke="#f39c12" />
-                        <YAxis yAxisId="right" orientation="right" stroke="#00a859" />
+                        <YAxis yAxisId="left" stroke="hsl(var(--primary))" />
+                        <YAxis yAxisId="right" orientation="right" stroke="hsl(var(--accent))" />
                         <Tooltip
                             contentStyle={{
                                 background: "hsl(var(--background))",
@@ -90,8 +91,8 @@ export default function PartnerPage() {
                             }}
                         />
                         <Legend />
-                        <Line yAxisId="left" type="monotone" dataKey="impressions" name="Impressions" stroke="#f39c12" strokeWidth={2} />
-                        <Line yAxisId="right" type="monotone" dataKey="leads" name="Pistes" stroke="#00a859" strokeWidth={2} />
+                        <Line yAxisId="left" type="monotone" dataKey="impressions" name="Impressions" stroke="hsl(var(--primary))" strokeWidth={2} />
+                        <Line yAxisId="right" type="monotone" dataKey="leads" name="Pistes" stroke="hsl(var(--accent))" strokeWidth={2} />
                     </LineChart>
                 </ResponsiveContainer>
             </CardContent>
@@ -102,7 +103,7 @@ export default function PartnerPage() {
                 <CardTitle className="font-headline">Répartition du ROI</CardTitle>
                 <CardDescription>Performance de vos activités de partenariat.</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="overflow-x-auto">
                  <Table>
                     <TableHeader>
                         <TableRow>
@@ -114,7 +115,7 @@ export default function PartnerPage() {
                     <TableBody>
                         {roiData.map(item => (
                             <TableRow key={item.activity}>
-                                <TableCell className="font-medium">{item.activity}</TableCell>
+                                <TableCell className="font-medium whitespace-nowrap">{item.activity}</TableCell>
                                 <TableCell>{item.leads}</TableCell>
                                 <TableCell>
                                     <Badge variant={item.status === 'En direct' ? 'default' : item.status === 'Terminé' ? 'secondary' : 'outline'} className={item.status === 'En direct' ? 'bg-green-500 text-white' : ''}>{item.status}</Badge>

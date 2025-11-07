@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from "next/link";
@@ -5,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Logo from "../shared/logo";
 import { Twitter, Linkedin, Facebook } from 'lucide-react';
-import { Locale } from "../../../i18n.config";
+import { Locale } from "../../i18n.config";
 
 export type FooterDictionary = {
     tagline: string;
@@ -30,8 +31,8 @@ const Footer = ({ lang, dictionary }: { lang: Locale, dictionary: FooterDictiona
 
   return (
     <footer className="border-t bg-card text-card-foreground">
-      <div className="container grid grid-cols-1 gap-12 py-12 md:grid-cols-4">
-        <div className="flex flex-col gap-4">
+      <div className="container grid grid-cols-1 gap-12 py-12 sm:grid-cols-2 md:grid-cols-4">
+        <div className="flex flex-col gap-4 md:col-span-1">
           <Logo lang={lang} />
           <p className="text-sm text-muted-foreground">
             {t.tagline}
@@ -73,7 +74,7 @@ const Footer = ({ lang, dictionary }: { lang: Locale, dictionary: FooterDictiona
           <p className="mt-4 text-sm text-muted-foreground">
             {t.newsletterHint}
           </p>
-          <form className="mt-4 flex gap-2">
+          <form className="mt-4 flex flex-col sm:flex-row gap-2">
             <Input type="email" placeholder={t.emailPlaceholder} className="flex-1" />
             <Button type="submit" variant="default">{t.subscribe}</Button>
           </form>

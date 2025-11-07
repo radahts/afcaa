@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { laureates } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Award } from 'lucide-react';
-import { Locale } from '../../../../i18n.config';
+import { Locale } from '../../i18n.config';
 
 const LaureateCard = ({ laureate, lang }: { laureate: (typeof laureates)[0], lang: Locale }) => {
     const image = PlaceHolderImages.find(p => p.id === laureate.photo);

@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import {
   Card,
@@ -47,10 +48,10 @@ export default function JuryPage() {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="flex justify-between items-start mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start mb-8 gap-4">
         <div>
           <h1 className="font-headline text-3xl font-bold">Tableau de Bord du Jury</h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mt-1">
             Évaluez les candidatures assignées. Toutes les soumissions sont anonymisées.
           </p>
         </div>
@@ -110,9 +111,9 @@ export default function JuryPage() {
                         <Textarea placeholder="Fournissez vos commentaires détaillés ici. Vos commentaires sont cruciaux pour la délibération finale..." rows={5}/>
                     </div>
                 </CardContent>
-                <CardFooter className="flex justify-end gap-2">
-                    <Button variant="outline">Sauvegarder le brouillon</Button>
-                    <Button>Soumettre et verrouiller le score</Button>
+                <CardFooter className="flex flex-col sm:flex-row justify-end gap-2">
+                    <Button variant="outline" className="w-full sm:w-auto">Sauvegarder le brouillon</Button>
+                    <Button className="w-full sm:w-auto">Soumettre et verrouiller le score</Button>
                 </CardFooter>
             </Card>
         </div>

@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from "next/image";
@@ -95,14 +96,14 @@ const Leaderboard = ({ candidates }: { candidates: Candidate[] }) => {
                 </CardTitle>
                 <CardDescription>Les votes sont mis à jour en temps réel. Un vote par personne, par jour.</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="overflow-x-auto">
                 <Table>
                     <TableHeader>
                         <TableRow>
                             <TableHead className="w-12">Rang</TableHead>
                             <TableHead>Candidat</TableHead>
                             <TableHead className="text-right">Votes</TableHead>
-                            <TableHead className="w-1/3">Progression</TableHead>
+                            <TableHead className="w-1/3 min-w-[120px]">Progression</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -111,7 +112,7 @@ const Leaderboard = ({ candidates }: { candidates: Candidate[] }) => {
                                 <TableCell className="font-bold text-center">
                                     {index === 0 ? <Medal className="w-6 h-6 text-primary mx-auto" /> : index + 1}
                                 </TableCell>
-                                <TableCell className="font-medium">{candidate.name}</TableCell>
+                                <TableCell className="font-medium whitespace-nowrap">{candidate.name}</TableCell>
                                 <TableCell className="text-right font-mono">{candidate.votes.toLocaleString()}</TableCell>
                                 <TableCell>
                                     <Progress value={(candidate.votes / maxVotes) * 100} />
@@ -182,7 +183,7 @@ const VoteDialog = ({ candidate, open, onOpenChange }: { candidate: Candidate | 
                     </>
                 )}
                 {step === 'confirmation' && (
-                     <div className="text-center p-8">
+                     <div className="text-center p-4 sm:p-8">
                         <Mail className="mx-auto h-16 w-16 text-green-500" />
                         <DialogTitle className="mt-4">Vérifiez votre boîte de réception !</DialogTitle>
                         <DialogDescription className="mt-2">
@@ -221,7 +222,7 @@ export default function VotePage() {
                     ))}
                 </div>
             </div>
-            <div>
+            <div className="lg:sticky lg:top-24 self-start">
                 <h2 className="font-headline text-2xl font-bold mb-6">Classement</h2>
                 <Leaderboard candidates={initialCandidates} />
             </div>

@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -31,7 +32,7 @@ export default function ResourcesPage() {
       <div className="container -mt-20 relative pb-20">
         <Card className="max-w-4xl mx-auto shadow-xl">
           <div className="grid md:grid-cols-2 items-center">
-            <div className="p-8">
+            <div className="p-6 sm:p-8">
               <CardHeader className="p-0">
                 <CardTitle className="font-headline text-2xl sm:text-3xl">
                   Le Rapport sur la Franchise en Afrique 2026
@@ -48,15 +49,15 @@ export default function ResourcesPage() {
                     <li>Études de cas de franchises à succès</li>
                 </ul>
                 <form className="mt-6 flex flex-col sm:flex-row gap-2">
-                    <Input type="email" placeholder="Entrez votre email professionnel" required />
+                    <Input type="email" placeholder="Entrez votre email" required />
                     <Button type="submit" className="w-full sm:w-auto">
                         <Download className="mr-2 h-4 w-4" />
-                        Télécharger maintenant
+                        Télécharger
                     </Button>
                 </form>
               </CardContent>
             </div>
-            <div className="hidden md:block">
+            <div className="hidden md:block h-full">
                  <Image
                     src="https://picsum.photos/seed/302/600/800"
                     alt="Report Cover"

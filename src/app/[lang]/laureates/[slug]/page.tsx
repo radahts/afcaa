@@ -1,3 +1,4 @@
+
 import { laureates } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -6,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft, Award, Calendar, Quote } from 'lucide-react';
-import { Locale } from '../../../../../i18n.config';
+import { Locale } from '../../../../i18n.config';
 
 export function generateStaticParams() {
     return laureates.map(laureate => ({
@@ -66,7 +67,7 @@ export default function LaureateProfilePage({ params }: { params: { slug: string
                                 <p className="flex items-center gap-2 text-muted-foreground font-medium mt-1">
                                     <Calendar className="h-4 w-4" /> 
                                     Lauréat de l'édition {laureate.year}
-                                </p>
+                                 </p>
                              </div>
                         </div>
 

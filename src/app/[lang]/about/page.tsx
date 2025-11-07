@@ -1,5 +1,6 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Trophy, Users, GitMerge, BarChart, TrendingUp, Handshake, BrainCircuit } from "lucide-react";
+import { CheckCircle, Trophy, Users, TrendingUp, Handshake, BrainCircuit, BarChart, GitMerge } from "lucide-react";
 
 const Section = ({ title, children, className }: { title: string, children: React.ReactNode, className?: string }) => (
     <section className={`py-12 md:py-16 ${className}`}>
@@ -70,7 +71,7 @@ export default function AboutPage() {
 
             <Section title="Processus de Sélection en 7 Étapes" className="bg-card">
                 <div className="relative max-w-5xl mx-auto">
-                    <div className="absolute left-1/2 h-full w-0.5 bg-border -translate-x-1/2 hidden md:block"></div>
+                    <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-border -translate-x-1/2"></div>
                     <div className="space-y-12">
                         {[
                             { date: "15 Juil", title: "Ouverture", description: "Dossier de candidature disponible sur le site officiel." },
@@ -81,13 +82,13 @@ export default function AboutPage() {
                             { date: "10 Déc", title: "Finalistes", description: "Annonce des finalistes et préparation du livre blanc." },
                             { date: "10 Déc", title: "Cérémonie", description: "Cérémonie des Awards et publication des résultats." },
                         ].map((step, index) => (
-                            <div key={index} className="md:grid md:grid-cols-2 md:gap-8 items-center relative">
-                                <div className={`text-center md:text-right md:pr-8 ${index % 2 === 0 ? '' : 'md:order-2 md:text-left md:pl-8'}`}>
+                            <div key={index} className="relative pl-12 md:grid md:grid-cols-2 md:gap-8 md:pl-0 items-center">
+                                <div className={`md:text-right md:pr-8 ${index % 2 === 0 ? '' : 'md:order-2 md:text-left md:pl-8'}`}>
                                     <div className="font-bold text-primary text-xl">{step.date}</div>
                                     <h3 className="font-headline text-2xl font-bold mt-1">{step.title}</h3>
                                     <p className="text-muted-foreground mt-2">{step.description}</p>
                                 </div>
-                                <div className={`hidden md:flex items-center justify-center ${index % 2 === 0 ? '' : 'md:order-1'}`}>
+                                <div className={`absolute top-1 left-0 md:relative flex items-center justify-center ${index % 2 === 0 ? '' : 'md:order-1'}`}>
                                     <div className="w-8 h-8 rounded-full bg-primary ring-8 ring-card flex items-center justify-center">
                                        <CheckCircle className="text-primary-foreground h-5 w-5"/>
                                     </div>

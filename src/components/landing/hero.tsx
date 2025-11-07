@@ -1,9 +1,10 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Medal, Users, Vote } from 'lucide-react';
-import { Locale } from '../../../i18n.config';
+import { Locale } from '../../i18n.config';
 
 const ShineButton = ({ children, href }: { children: React.ReactNode, href: string }) => (
     <Button asChild size="lg" className="relative overflow-hidden group">
@@ -18,7 +19,7 @@ const Hero = ({ lang }: { lang: Locale }) => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
-    <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center text-white overflow-hidden">
+    <section className="relative w-full h-[90vh] min-h-[650px] flex items-center justify-center text-white overflow-hidden">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
@@ -49,17 +50,17 @@ const Hero = ({ lang }: { lang: Locale }) => {
       <div className="absolute bottom-0 left-0 right-0 z-10 p-4 bg-gradient-to-t from-secondary/50 to-transparent">
         <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center text-white">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center p-4">
                     <Medal className="w-8 h-8 text-primary mb-2" />
                     <span className="text-2xl font-bold font-headline">+25 Catégories</span>
                     <span className="text-sm text-gray-300">Toutes industries confondues</span>
                 </div>
-                 <div className="flex flex-col items-center">
+                 <div className="flex flex-col items-center p-4">
                     <Users className="w-8 h-8 text-primary mb-2" />
                     <span className="text-2xl font-bold font-headline">+1000 Candidats</span>
                     <span className="text-sm text-gray-300">De 54 pays</span>
                 </div>
-                 <div className="flex flex-col items-center">
+                 <div className="flex flex-col items-center p-4">
                     <Vote className="w-8 h-8 text-primary mb-2" />
                     <span className="text-2xl font-bold font-headline">+50 000 Votes</span>
                     <span className="text-sm text-gray-300">Pour le Prix du Public</span>
