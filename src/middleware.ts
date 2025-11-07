@@ -27,18 +27,16 @@ export function middleware(request: NextRequest) {
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request)
-
-    // Si le chemin est juste `/`, on redirige vers `/{locale}`.
-    // Sinon, on ajoute `/{locale}` au début du chemin.
     return NextResponse.redirect(
-      new URL(`/${locale}${pathname === '/' ? '' : pathname}`, request.url)
+      new URL(
+        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+        request.url
+      )
     )
   }
 }
 
 export const config = {
-  // Matcher pour exclure les fichiers statiques, les images et les routes API
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'
-  ]
+  // Matcher ignoring `/_next/` and `/api/`
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 }
