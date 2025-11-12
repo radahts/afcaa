@@ -1,4 +1,6 @@
 
+'use client';
+
 import {
   Card,
   CardContent,
@@ -12,11 +14,11 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
   Legend,
   ResponsiveContainer,
   Line,
   LineChart,
+  Tooltip,
 } from "recharts";
 import {
   Table,
@@ -29,6 +31,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import type { LucideIcon } from "lucide-react";
 import { partnerStats } from "@/lib/data";
+import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 const chartData = [
   { name: "Jan", leads: 400, impressions: 240000 },
@@ -84,11 +87,7 @@ export default function PartnerPage() {
                         <YAxis yAxisId="left" stroke="hsl(var(--primary))" />
                         <YAxis yAxisId="right" orientation="right" stroke="hsl(var(--accent))" />
                         <Tooltip
-                            contentStyle={{
-                                background: "hsl(var(--background))",
-                                border: "1px solid hsl(var(--border))",
-                                borderRadius: "var(--radius)",
-                            }}
+                            content={<ChartTooltipContent />}
                         />
                         <Legend />
                         <Line yAxisId="left" type="monotone" dataKey="impressions" name="Impressions" stroke="hsl(var(--primary))" strokeWidth={2} />
