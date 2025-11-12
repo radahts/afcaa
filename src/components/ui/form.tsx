@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -52,7 +53,7 @@ const useFormField = () => {
     throw new Error("useFormField should be used within <FormField>")
   }
 
-  const { id } from itemContext
+  const { id } = itemContext
 
   return {
     id,
@@ -68,9 +69,7 @@ type FormItemContextValue = {
   id: string
 }
 
-const FormItemContext = React.createContext<FormItemContextValue>(
-  {} as FormItemContextValue
-)
+const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue)
 
 const FormItem = React.forwardRef<
   HTMLDivElement,
