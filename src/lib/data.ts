@@ -1,60 +1,140 @@
-import { Award, BarChart, Briefcase, Gem, Lightbulb, UserCheck, Users, TrendingUp, FileText, BarChart2, Zap, Shield, Building, Globe, Recycle, GitMerge, Scaling, Handshake, Sprout, Network, University, Library, Banknote, Speaker, Bot } from "lucide-react";
+import { Award, BarChart, Briefcase, Gem, Lightbulb, UserCheck, Users, TrendingUp, FileText, BarChart2, Zap, Shield, Building, Globe, Recycle, GitMerge, Scaling, Handshake, Sprout, Network, University, Library, Banknote, Speaker, Bot, Store, ShoppingCart, Tractor, Factory, Ship, Landmark } from "lucide-react";
 
 export const categories = [
   {
       icon: Gem,
-      title: "Meilleure enseigne africaine de franchise locale (C1)",
+      title: "C1 : Meilleure enseigne africaine de franchise locale",
       description: "Récompense une marque africaine ayant développé un modèle de franchise performant, adapté au contexte local.",
   },
   {
       icon: Globe,
-      title: "Meilleure chaîne de distribution régionale (C2)",
+      title: "C2 : Meilleure chaîne de distribution régionale",
       description: "Distinction pour un réseau ayant réussi à s’étendre efficacement dans plusieurs pays d’une même région.",
   },
   {
       icon: Users,
-      title: "Meilleur réseau de distribution communautaire (C3)",
+      title: "C3 : Meilleur réseau de distribution communautaire",
       description: "Valorise les modèles qui intègrent les communautés locales dans leur chaîne de valeur.",
   },
   {
       icon: Bot,
-      title: "Meilleure franchise technologique africaine (C4)",
+      title: "C4 : Meilleure franchise technologique africaine",
       description: "Récompense les modèles utilisant la tech pour transformer le commerce de proximité.",
   },
   {
-      icon: Handshake,
-      title: "Meilleure initiative de commerce rural (C5)",
+      icon: Tractor,
+      title: "C5 : Meilleure initiative de commerce rural",
       description: "Met en lumière les projets qui revitalisent l’économie rurale via des modèles commerciaux inclusifs.",
   },
   {
       icon: Scaling,
-      title: "Meilleur intégrateur de l’économie informelle (C6)",
+      title: "C6 : Meilleur intégrateur de l’économie informelle",
       description: "Récompense les acteurs ayant réussi à formaliser des micro-entrepreneurs informels.",
   },
   {
       icon: Recycle,
-      title: "Meilleure franchise verte (C7)",
+      title: "C7 : Meilleure franchise verte",
       description: "Distinction pour les modèles ayant une empreinte environnementale minimale et des pratiques circulaires.",
   },
   {
-      icon: GitMerge,
-      title: "Meilleur modèle inclusif (genre, jeunes, handicap) (C8)",
+      icon: Store,
+      title: "C8 : Meilleure franchise digitale",
       description: "Valorise les enseignes ayant une stratégie omnicanale réussie (e-commerce + physique).",
   },
   {
-      icon: Building,
-      title: "Meilleure franchise digitale (C9)",
-      description: "Établissement d'hospitalité incluant hôtels, pensions, camping, etc., destiné à l'accueil des clients.",
+      icon: GitMerge,
+      title: "C9 : Meilleur modèle inclusif (genre, jeunes, handicap)",
+      description: "Récompense les initiatives qui intègrent activement les groupes marginalisés.",
   },
   {
       icon: Sprout,
-      title: "Meilleure franchise émergente (moins de 3 ans) (C10)",
+      title: "C10 : Meilleure franchise émergente (moins de 3 ans)",
       description: "Met en avant les jeunes pousses à fort potentiel.",
   },
   {
-      icon: Award,
-      title: "Meilleure franchise internationale en Afrique (C11)",
+      icon: Landmark,
+      title: "C11 : Meilleure franchise internationale en Afrique",
       description: "Distinction pour une marque étrangère ayant su s’adapter avec succès au marché africain.",
+  },
+  {
+      icon: Network,
+      title: "M1 : Meilleure fédération ou association",
+      description: "Récompense les organisations professionnelles qui défendent et structurent le secteur.",
+  },
+  {
+      icon: Briefcase,
+      title: "M2 : Meilleur cabinet de conseil",
+      description: "Distinction pour les cabinets ayant accompagné avec succès des réseaux africains.",
+  },
+  {
+      icon: Speaker,
+      title: "M3 : Meilleur média spécialisé",
+      description: "Valorise les médias qui couvrent de manière pertinente et régulière le secteur de la franchise en Afrique.",
+  },
+  {
+      icon: Banknote,
+      title: "M4 : Meilleure institution financière africaine pour la franchise",
+      description: "Récompense les banques ou institutions ayant développé des produits adaptés aux franchisés.",
+  },
+  {
+      icon: Zap,
+      title: "M5 : Meilleure FinTech/InsurTech pour le commerce",
+      description: "Distinction pour les startups technologiques facilitant l’accès aux services financiers pour les commerçants.",
+  },
+  {
+      icon: Shield,
+      title: "M6 : Meilleure compagnie d’assurance pour les réseaux commerciaux",
+      description: "Récompense les assureurs ayant conçu des offres sur mesure pour les réseaux de franchise.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "AS1 : Meilleure Coopérative de Commerçants",
+    description: "Valoriser le regroupement d’indépendants qui mutualise achats ou services pour abaisser les prix et structurer l’offre locale.",
+  },
+  {
+      icon: Ship,
+      title: "AS2 : GIE-Commerce Transfrontalier de l’Année",
+      description: "Récompenser le GIE qui mutualise logistique ou achats sur plusieurs pays et réduit les coûts de transport/douane.",
+  },
+  {
+      icon: Factory,
+      title: "AS3 : Centrale d’Achat Inclusive",
+      description: "Mettre en lumière la centrale qui équilibre prix négociés et intégration de fournisseurs locaux/PME.",
+  },
+  {
+      icon: Users,
+      title: "AS4 : Plateforme Coopérative & Crowd-Retail",
+      description: "Distinguer les modèles où consommateurs et/ou commerçants sont actionnaires et décident collectivement.",
+  },
+  {
+      icon: Store,
+      title: "AS5 : Micro-Réseau d’Épicier·es Affilié·es",
+      description: "Promouvoir les réseaux souples gardant enseigne individuelle tout en mutualisant promo, PLV et fidélité.",
+  },
+  {
+      icon: Building,
+      title: "AS6 : Retail-Hub & Mutualisation Logistique",
+      description: "Récompenser le hub qui partage entrepôt, cold-room ou dernier kilomètre pour plusieurs commerces.",
+  },
+  {
+      icon: Handshake,
+      title: "AS7 : Union/Association de Commerçants – Plaidoyer & Services",
+      description: "Reconnaître l’association qui défend les intérêts des commerçants et obtient des mesures concrètes des pouvoirs publics.",
+  },
+  {
+      icon: Banknote,
+      title: "AS8 : Wallet & FinTech Communautaire",
+      description: "Valoriser la solution qui mutualise épargne, crédit et paiements fournisseurs pour un groupe de commerçants.",
+  },
+  {
+      icon: Shield,
+      title: "AS9 : Assurance & Services Mutualisés pour Commerçants",
+      description: "Mettre en avant l’assureur/mutuelle qui conçoit un pack groupe à prix réduit et délais d’indemnisation courts.",
+  },
+  {
+      icon: Globe,
+      title: "AS10 : Collectif Click-&-Collect / Shared-e-Shop",
+      description: "Distinguer plusieurs commerçants partageant une plateforme e-commerce et un point retrait unique.",
   }
 ];
 
