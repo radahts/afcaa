@@ -1,12 +1,14 @@
 
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle, Trophy, Users, TrendingUp, Handshake, BrainCircuit, BarChart, GitMerge, ShieldCheck, Scale, Leaf, FileText } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { copilPermanentMembers, copil2026Members, cse2026Members } from '@/lib/data';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const Section = ({ title, children, className, id }: { title: string, children: React.ReactNode, className?: string, id?: string }) => (
     <section className={`py-12 md:py-16 ${className}`} id={id}>
         <div className="container">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
                 <h2 className="font-headline text-3xl font-bold text-center mb-10 text-primary">{title}</h2>
                 {children}
             </div>
@@ -14,12 +16,43 @@ const Section = ({ title, children, className, id }: { title: string, children: 
     </section>
 )
 
-const CharterArticle = ({ title, children }: { title: string, children: React.ReactNode }) => (
-    <div>
-        <h4 className="font-bold text-lg mb-2">{title}</h4>
-        <div className="space-y-2 text-muted-foreground">{children}</div>
+type Member = {
+    id: string;
+    name: string;
+    title: string;
+    photo: string;
+}
+
+const MemberCard = ({ member }: { member: Member }) => {
+    const image = PlaceHolderImages.find(p => p.id === member.photo);
+    return (
+        <div className="text-center">
+            <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-card">
+                 {image && (
+                    <Image 
+                        src={image.imageUrl} 
+                        alt={member.name} 
+                        fill 
+                        className="object-cover"
+                        data-ai-hint={image.imageHint}
+                    />
+                )}
+            </div>
+            <h4 className="mt-4 font-headline text-lg font-semibold">{member.name}</h4>
+            <p className="text-sm text-primary font-medium">{member.title}</p>
+        </div>
+    );
+};
+
+const CommitteeSection = ({ title, members }: { title: string; members: Member[] }) => (
+    <div className="mt-12">
+        <h3 className="text-2xl font-bold font-headline mb-8 text-center">{title}</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
+            {members.map(member => <MemberCard key={member.id} member={member} />)}
+        </div>
     </div>
-)
+);
+
 
 export default function AboutPage() {
     return (
@@ -65,7 +98,10 @@ export default function AboutPage() {
             </Section>
 
             <Section title="Gouvernance et intégrité : deux comités au service de l’excellence africaine">
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-center prose lg:prose-xl max-w-none text-foreground/80 mx-auto mb-12">
+                    <p>Pour garantir transparence, impartialité et rigueur scientifique, l’Africa Franchise & Commerce Associé Awards (AFCAA) repose sur deux comités indépendants, aux rôles complémentaires et clairement définis. Leur composition pluraliste, leurs procédures strictes et leurs engagements éthiques constituent la colonne vertébrale de la crédibilité de l’AFCAA sur le continent.</p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-8 mb-16">
                     <Card>
                         <CardHeader>
                             <CardTitle className="font-headline text-2xl">Le Comité de Pilotage (COPIL)</CardTitle>
@@ -97,6 +133,11 @@ export default function AboutPage() {
                         </CardContent>
                     </Card>
                 </div>
+                
+                <CommitteeSection title="Comité de Pilotage Permanent" members={copilPermanentMembers} />
+                <CommitteeSection title="Comité de Pilotage AFCAA 2026" members={copil2026Members} />
+                <CommitteeSection title="Comité Scientifique & Éthique AFCAA 2026" members={cse2026Members} />
+
             </Section>
 
             <Section title="La Charte de l'AFCAA" className="bg-card">

@@ -107,6 +107,66 @@
       "description": "Portrait of Jean-Pierre Dubois",
       "imageUrl": "https://images.unsplash.com/photo-1616104164417-1f102e20839f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYW4lMjBmYXJtZXJ8ZW58MHx8fHwxNzYyMzY1MzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man farmer"
+    },
+    {
+      "id": "member-1",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjMwODE1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "member-2",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxidXNpbmVzcyUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MzA3NDQyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business portrait"
+    },
+    {
+      "id": "member-3",
+      "imageUrl": "https://images.unsplash.com/photo-1600878459138-e1123b37cb30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb3Jwb3JhdGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjMxMDE2NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "corporate headshot"
+    },
+    {
+      "id": "member-4",
+      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjMwMzk3MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "member-5",
+      "imageUrl": "https://images.unsplash.com/photo-1530281834572-02d15fa61f64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjMxMjk5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "executive portrait"
+    },
+    {
+      "id": "member-6",
+      "imageUrl": "https://images.unsplash.com/photo-1582219284795-a816567988b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsZWFkZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjMxMjk5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leader portrait"
+    },
+    {
+      "id": "member-7",
+      "imageUrl": "https://images.unsplash.com/photo-1612120745472-8a11ba2b1c90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhY2FkZW1pYyUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MzEyOTk4OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "academic portrait"
+    },
+    {
+      "id": "member-8",
+      "imageUrl": "https://images.unsplash.com/photo-1604346382498-34e8c19df705?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxleHBlcnQlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjMxMjk5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "expert headshot"
+    },
+    {
+      "id": "member-9",
+      "imageUrl": "https://images.unsplash.com/photo-1578324356967-7b8560c41cbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYXd5ZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjMxMjk5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lawyer portrait"
+    },
+    {
+      "id": "member-10",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NjMwNzczOTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "member-11",
+      "imageUrl": "https://images.unsplash.com/photo-1741336649503-0e4e4e1f7f97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhdWRpdG9yJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYzMTI5OTg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "auditor portrait"
+    },
+    {
+      "id": "member-12",
+      "imageUrl": "https://images.unsplash.com/photo-1631749792591-fd54ddeeced2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxleHBlcnQlMjB3b21hbnxlbnwwfHx8fDE3NjMxMjk5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "expert woman"
     }
   ]
 }

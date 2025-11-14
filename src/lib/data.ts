@@ -258,3 +258,24 @@ export const laureates = [
         quote: "L'avenir de l'Afrique se cultive dans ses campagnes."
       }
   ];
+
+  export const copilPermanentMembers = [
+    { id: 'perm-1', name: 'Dr. Evelyn Mensah', title: 'Présidente Permanente', photo: 'member-1' },
+    { id: 'perm-2', name: 'M. Olivier Dubois', title: 'Secrétaire Général', photo: 'member-2' },
+  ];
+  
+  export const copil2026Members = [
+    { id: '2026-c-1', name: 'Aïssata Traoré', title: 'Directrice Exécutive 2026', photo: 'member-3' },
+    { id: '2026-c-2', name: 'Bello Adebayo', title: 'Responsable des Partenariats', photo: 'member-4' },
+    { id: '2026-c-3', name: 'Chloé Dupont', title: 'Coordinatrice Logistique', photo: 'member-5' },
+    { id: '2026-c-4', name: 'David Kimani', title: 'Superviseur Financier', photo: 'member-6' },
+  ];
+  
+  export const cse2026Members = [
+    { id: '2026-s-1', name: 'Prof. Kenza Alami', title: 'Présidente du CSE 2026 (Économiste)', photo: 'member-7' },
+    { id: '2026-s-2', name: 'Dr. Samuel Osei', title: 'Expert en Franchise', photo: 'member-8' },
+    { id: '2026-s-3', name: 'Me Fatou Diop', title: 'Juriste en Droit des Affaires', photo: 'member-9' },
+    { id: '2026-s-4', name: 'Ngozi Okonjo', title: 'Représentante Société Civile', photo: 'member-10' },
+    { id: '2026-s-5', name: 'Ahmed Benjelloun', title: 'Auditeur Indépendant', photo: 'member-11' },
+    { id: '2026-s-6', name: 'Maria Costa', title: 'Spécialiste en Développement Durable', photo: 'member-12' },
+  ];
