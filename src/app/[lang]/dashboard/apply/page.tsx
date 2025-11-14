@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -233,6 +234,12 @@ export default function ApplicationPage() {
     const [currentStep, setCurrentStep] = useState(initialProgress.currentStep);
     const methods = useForm({
         resolver: zodResolver(Step1Schema),
+        defaultValues: {
+            companyName: "",
+            contactName: "",
+            email: "",
+            phone: "",
+        },
     });
 
     const onSubmit = (data: z.infer<typeof Step1Schema>) => {
@@ -297,3 +304,5 @@ export default function ApplicationPage() {
     </div>
   );
 }
+
+    
